@@ -2,7 +2,7 @@
 
 Aplicación web interactiva, ultra moderna y persuasiva para presentar a la dirección de **Ela Bella** una propuesta de campaña de validación internacional con **Influencers de IA** (Higgsfield + ElevenLabs), producción bilingüe **español (Paraguay) + portugués (Brasil)**, distribución en Meta / YouTube / TikTok y gestión estratégica incluida a costo cero.
 
-> Stack: HTML + **Tailwind CSS (compilado a un CSS estático)** + JavaScript modular (vanilla). Sitio 100% estático, sin dependencias externas en tiempo de ejecución. Despliegue automático en GitHub Pages mediante GitHub Actions.
+> Stack: HTML + **Tailwind CSS (compilado a un CSS estático)** + JavaScript modular (vanilla). Sitio 100% estático, sin dependencias externas en tiempo de ejecución. Despliegue directo en GitHub Pages servido desde la rama `main`.
 
 ---
 
@@ -49,8 +49,6 @@ presupuesto-mkt-elabela/
 ├── assets/
 │   ├── glow.png            # Logo real de Ela Bella (usado en Navbar/Footer/favicon)
 │   └── logo-elabela.svg    # Logo placeholder (no referenciado, reemplazado por glow.png)
-├── .github/workflows/
-│   └── deploy.yml          # Despliegue automático a GitHub Pages
 └── README.md
 ```
 
@@ -76,14 +74,14 @@ npx tailwindcss@3 -i css/tailwind.input.css -o css/tailwind.css --minify
 
 ---
 
-## 🚀 Despliegue en GitHub Pages (automático)
+## 🚀 Despliegue en GitHub Pages
 
-El repositorio incluye un workflow (`.github/workflows/deploy.yml`) que **publica el sitio automáticamente en cada `push` a `main`**. Solo hay que decirle a GitHub que use GitHub Actions como origen:
+Como el sitio es **100% estático** (el CSS de Tailwind ya está compilado), GitHub Pages lo sirve directamente desde la rama `main`, sin workflow ni paso de build:
 
 1. Entra al repositorio en GitHub → pestaña **Settings**.
 2. Menú lateral izquierdo → **Pages**.
-3. En **Build and deployment** → *Source* selecciona **GitHub Actions** (⚠️ **no** "Deploy from a branch").
-4. Listo. Cada `push` a `main` dispara el despliegue (también puedes lanzarlo manualmente desde la pestaña **Actions → Deploy to GitHub Pages → Run workflow**).
+3. En **Build and deployment** → *Source* selecciona **Deploy from a branch**.
+4. En *Branch* elige **`main`** y carpeta **`/ (root)`**, y pulsa **Save**.
 
 En 1–2 minutos tu propuesta estará pública en:
 
@@ -91,15 +89,19 @@ En 1–2 minutos tu propuesta estará pública en:
 https://bryan-dev074.github.io/presupuesto-mkt-elabela/
 ```
 
-> **¿El despliegue daba error?** La causa habitual es tener *Source* en "Deploy from a branch" mientras existe el workflow de Actions (incompatibles), o una versión de acción inválida. Con *Source = GitHub Actions* y el workflow actual (corregido a `actions/deploy-pages@v4`) el despliegue funciona.
+El archivo `.nojekyll` (en la raíz) evita que GitHub procese el sitio con Jekyll, sirviéndolo tal cual.
 
-### Publicar los cambios
+> **⚠️ Importante — usar UN solo mecanismo de despliegue.** No combines *"Deploy from a branch"* con un workflow de GitHub Actions que también despliegue a Pages: ambos compiten por el mismo entorno `github-pages` y se bloquean/cancelan mutuamente (esa era la causa de los errores). Por eso este proyecto usa únicamente el modo rama. Si en el futuro prefieres GitHub Actions, cambia *Source* a **"GitHub Actions"** y añade un workflow — pero entonces **no** uses también el modo rama.
+
+### Publicar cambios
 
 ```bash
 git add .
 git commit -m "tu mensaje"
 git push origin main
 ```
+
+Cada `push` a `main` se publica solo en 1–2 minutos.
 
 ---
 
