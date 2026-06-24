@@ -1,13 +1,13 @@
 /* =====================================================================
-   calculator.js · Presupuesto interactivo en tiempo real
+   calculator.js · Orçamento interativo em tempo real
    ===================================================================== */
 (function () {
   "use strict";
 
-  /* ---------- Configuración de costos (FUENTE ÚNICA DE VERDAD) ---------- */
+  /* ---------- Configuração de custos (FONTE ÚNICA DE VERDADE) ---------- */
   const COSTS = {
-    higgsfield: { label: "Higgsfield (Plan Ultra)", monthly: 129, color: "#2dd4bf", fixed: true },
-    elevenlabs: { label: "ElevenLabs (Plan Starter)", monthly: 6, color: "#5eead4", fixed: true },
+    higgsfield: { label: "Higgsfield (Plano Ultra)", monthly: 129, color: "#2dd4bf", fixed: true },
+    elevenlabs: { label: "ElevenLabs (Plano Starter)", monthly: 6, color: "#5eead4", fixed: true },
     meta: { label: "Meta Ads (Reels)", color: "#2dd4bf", perDay: 0 },
     youtube: { label: "YouTube Shorts", color: "#fb7185", perDay: 0 },
     tiktok: { label: "TikTok Ads", color: "#e879f9", perDay: 20, monthlyMin: 600 },
@@ -21,7 +21,7 @@
     tiktokOn: false,
   };
 
-  /* ---------- Referencias DOM ---------- */
+  /* ---------- Referências DOM ---------- */
   const metaSlider = document.getElementById("metaSlider");
   const ytSlider = document.getElementById("ytSlider");
   const metaValue = document.getElementById("metaValue");
@@ -38,14 +38,14 @@
   const money = (n) => "$" + n.toLocaleString("en-US", { minimumFractionDigits: 0, maximumFractionDigits: 0 });
   const money2 = (n) => "$" + n.toLocaleString("en-US", { minimumFractionDigits: 2, maximumFractionDigits: 2 });
 
-  /* Pinta el track rellenado del slider según su progreso */
+  /* Pinta o trilho preenchido do slider conforme seu progresso */
   function paintTrack(slider) {
     const min = +slider.min, max = +slider.max, val = +slider.value;
     const pct = ((val - min) / (max - min)) * 100;
     slider.style.backgroundSize = pct + "% 100%";
   }
 
-  /* ---------- Render del total + desglose ---------- */
+  /* ---------- Render do total + detalhamento ---------- */
   function render() {
     const metaMonthly = state.metaPerDay * DAYS_PER_MONTH;
     const ytMonthly = state.ytPerDay * DAYS_PER_MONTH;
@@ -58,18 +58,18 @@
       ytMonthly +
       tiktokMonthly;
 
-    // Total con animación de conteo suave
+    // Total com animação de contagem suave
     animateNumber(totalDisplay, total, "$");
 
-    // Desglose
+    // Detalhamento
     const rows = [
       { ...COSTS.higgsfield, value: COSTS.higgsfield.monthly },
       { ...COSTS.elevenlabs, value: COSTS.elevenlabs.monthly },
-      { ...COSTS.meta, value: metaMonthly, detail: `${money(state.metaPerDay)}/día × 30` },
-      { ...COSTS.youtube, value: ytMonthly, detail: `${money(state.ytPerDay)}/día × 30` },
+      { ...COSTS.meta, value: metaMonthly, detail: `${money(state.metaPerDay)}/dia × 30` },
+      { ...COSTS.youtube, value: ytMonthly, detail: `${money(state.ytPerDay)}/dia × 30` },
     ];
     if (state.tiktokOn) {
-      rows.push({ ...COSTS.tiktok, value: tiktokMonthly, detail: `${money(COSTS.tiktok.perDay)}/día · mínimo técnico` });
+      rows.push({ ...COSTS.tiktok, value: tiktokMonthly, detail: `${money(COSTS.tiktok.perDay)}/dia · mínimo técnico` });
     }
 
     breakdown.innerHTML = rows
@@ -83,7 +83,7 @@
       .join("");
   }
 
-  /* ---------- Animación de conteo del total ---------- */
+  /* ---------- Animação de contagem do total ---------- */
   function animateNumber(el, target, prefix = "") {
     const current = parseFloat((el.dataset.val || "0"));
     const duration = 450;
@@ -124,19 +124,19 @@
       tiktokAlert.classList.add("hidden");
       tiktokActiveInfo.classList.remove("hidden");
       tiktokActiveInfo.classList.add("flex");
-      tiktokStatus.textContent = "Activo · mínimo técnico de $20 USD/día aplicado (~$600/mes).";
+      tiktokStatus.textContent = "Ativo · mínimo técnico de $20 USD/dia aplicado (~$600/mês).";
     } else {
       tiktokAlert.classList.remove("hidden");
       tiktokActiveInfo.classList.add("hidden");
       tiktokActiveInfo.classList.remove("flex");
-      tiktokStatus.textContent = "Pausado temporalmente para optimizar presupuesto en Fase 1.";
+      tiktokStatus.textContent = "Pausado temporariamente para otimizar o orçamento na Fase 1.";
     }
     render();
   });
 
   /* ---------- Imprimir / Exportar PDF ---------- */
   printBtn?.addEventListener("click", () => {
-    // Inyecta un resumen imprimible en la cabecera de la calculadora (visible solo al imprimir)
+    // Injeta um resumo imprimível no topo da calculadora (visível só ao imprimir)
     injectPrintSummary();
     window.print();
   });
@@ -156,17 +156,17 @@
     }
     box.innerHTML = `
       <div style="display:block !important; padding:24px; margin-bottom:16px; border:2px solid #0d9488; border-radius:12px; background:#f0fdfa;">
-        <h2 style="margin:0 0 8px; color:#0f172a; font-size:20px;">Propuesta de presupuesto personalizada — Ela Bela</h2>
-        <p style="margin:0 0 12px; color:#475569; font-size:13px;">Generada el ${new Date().toLocaleDateString("es-ES", { dateStyle: "long" })}</p>
+        <h2 style="margin:0 0 8px; color:#0f172a; font-size:20px;">Proposta de orçamento personalizada — Ela Bela</h2>
+        <p style="margin:0 0 12px; color:#475569; font-size:13px;">Gerada em ${new Date().toLocaleDateString("pt-BR", { dateStyle: "long" })}</p>
         <table style="width:100%; border-collapse:collapse; font-size:13px; color:#1e293b;">
-          <tr><td style="padding:6px 0; border-bottom:1px solid #cbd5e1;">Higgsfield (Plan Ultra)</td><td style="text-align:right; border-bottom:1px solid #cbd5e1; font-weight:600;">${money2(COSTS.higgsfield.monthly)}</td></tr>
-          <tr><td style="padding:6px 0; border-bottom:1px solid #cbd5e1;">ElevenLabs (Plan Starter)</td><td style="text-align:right; border-bottom:1px solid #cbd5e1; font-weight:600;">${money2(COSTS.elevenlabs.monthly)}</td></tr>
-          <tr><td style="padding:6px 0; border-bottom:1px solid #cbd5e1;">Meta Ads (${money(state.metaPerDay)}/día × 30)</td><td style="text-align:right; border-bottom:1px solid #cbd5e1; font-weight:600;">${money(metaMonthly)}</td></tr>
-          <tr><td style="padding:6px 0; border-bottom:1px solid #cbd5e1;">YouTube Shorts (${money(state.ytPerDay)}/día × 30)</td><td style="text-align:right; border-bottom:1px solid #cbd5e1; font-weight:600;">${money(ytMonthly)}</td></tr>
-          ${state.tiktokOn ? `<tr><td style="padding:6px 0; border-bottom:1px solid #cbd5e1;">TikTok Ads (mínimo técnico $20/día)</td><td style="text-align:right; border-bottom:1px solid #cbd5e1; font-weight:600;">${money(tiktokMonthly)}</td></tr>` : ""}
-          <tr><td style="padding:10px 0 0; font-weight:700; font-size:15px; color:#0f172a;">TOTAL MENSUAL</td><td style="text-align:right; padding-top:10px; font-weight:800; font-size:15px; color:#0d9488;">${money(total)}</td></tr>
+          <tr><td style="padding:6px 0; border-bottom:1px solid #cbd5e1;">Higgsfield (Plano Ultra)</td><td style="text-align:right; border-bottom:1px solid #cbd5e1; font-weight:600;">${money2(COSTS.higgsfield.monthly)}</td></tr>
+          <tr><td style="padding:6px 0; border-bottom:1px solid #cbd5e1;">ElevenLabs (Plano Starter)</td><td style="text-align:right; border-bottom:1px solid #cbd5e1; font-weight:600;">${money2(COSTS.elevenlabs.monthly)}</td></tr>
+          <tr><td style="padding:6px 0; border-bottom:1px solid #cbd5e1;">Meta Ads (${money(state.metaPerDay)}/dia × 30)</td><td style="text-align:right; border-bottom:1px solid #cbd5e1; font-weight:600;">${money(metaMonthly)}</td></tr>
+          <tr><td style="padding:6px 0; border-bottom:1px solid #cbd5e1;">YouTube Shorts (${money(state.ytPerDay)}/dia × 30)</td><td style="text-align:right; border-bottom:1px solid #cbd5e1; font-weight:600;">${money(ytMonthly)}</td></tr>
+          ${state.tiktokOn ? `<tr><td style="padding:6px 0; border-bottom:1px solid #cbd5e1;">TikTok Ads (mínimo técnico $20/dia)</td><td style="text-align:right; border-bottom:1px solid #cbd5e1; font-weight:600;">${money(tiktokMonthly)}</td></tr>` : ""}
+          <tr><td style="padding:10px 0 0; font-weight:700; font-size:15px; color:#0f172a;">TOTAL MENSAL</td><td style="text-align:right; padding-top:10px; font-weight:800; font-size:15px; color:#0d9488;">${money(total)}</td></tr>
         </table>
-        <p style="margin:12px 0 0; color:#475569; font-size:12px;">Gestión estratégica, edición y control diario del presupuesto: incluidos a $0 USD.</p>
+        <p style="margin:12px 0 0; color:#475569; font-size:12px;">Gestão estratégica, edição e controle diário do orçamento: incluídos a $0 USD.</p>
       </div>`;
   }
 

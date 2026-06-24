@@ -1,6 +1,6 @@
 /* =====================================================================
-   segmentation.js · Ejemplo interactivo de segmentación por público
-   Muestra cómo cambia la estrategia según producto / mercado / idioma
+   segmentation.js · Exemplo interativo de segmentação por público
+   Mostra como muda a estratégia conforme produto / mercado / idioma
    ===================================================================== */
 (function () {
   "use strict";
@@ -8,50 +8,50 @@
   const EXAMPLES = [
     {
       id: "py-basico",
-      label: "PY · Producto básico",
-      persona: "Mujer 22–35 · Paraguay",
-      interests: ["Skincare diario", "Hidratación", "Maquillaje natural", "Cuidado personal económico"],
-      behaviors: ["Compra en marketplace", "Interactúa con reels de belleza", "Busca reseñas en español"],
-      angle: "Dolor + precio accesible",
-      hook: "“Si tu crema hidratante te deja la piel tirante… probá esto.”",
-      lang: "Español (paraguayo neutro)",
-      note: "Ej: una crema facial de uso diario. El ángulo va al problema (piel seca) y posiciona el producto como solución económica. Doblaje en español con tono cercano.",
+      label: "PY · Produto básico",
+      persona: "Mulher 22–35 · Paraguai",
+      interests: ["Skincare diário", "Hidratação", "Maquiagem natural", "Cuidado pessoal econômico"],
+      behaviors: ["Compra em marketplace", "Interage com reels de beleza", "Busca avaliações em espanhol"],
+      angle: "Dor + preço acessível",
+      hook: "“Se o seu hidratante deixa a pele repuxada… experimente isto.”",
+      lang: "Espanhol (paraguaio neutro)",
+      note: "Ex: um creme facial de uso diário. O ângulo vai ao problema (pele seca) e posiciona o produto como solução econômica. Dublagem em espanhol com tom próximo.",
       color: "#2dd4bf",
     },
     {
       id: "br-estrella",
-      label: "BR · Producto estrella",
+      label: "BR · Produto estrela",
       persona: "Mulher 18–30 · Brasil",
       interests: ["Maquiagem completa", "Tendências de beleza", "Influenciadores de beleza", "Unhas e cabelo"],
       behaviors: ["Compra por impulso", "Segue creators de beleza", "Assiste tutoriais longos"],
-      angle: "Transformación aspiracional",
+      angle: "Transformação aspiracional",
       hook: "“Do básico ao arrasão em 60 segundos…”",
       lang: "Português (BR natural)",
-      note: "Ej: un iluminador o labial tendencia. Ángulo de transformación 'antes y después', voz en portugués brasileño con energía. Público que compra por impulso y sigue creators.",
+      note: "Ex: um iluminador ou batom em tendência. Ângulo de transformação 'antes e depois', voz em português brasileiro com energia. Público que compra por impulso e segue creators.",
       color: "#e879f9",
     },
     {
       id: "py-regalo",
-      label: "PY · Producto de regalo",
-      persona: "Mujer 25–45 que regala",
-      interests: ["Regalos", "Fechas especiales", "Autocuidado", "Belleza para regalar"],
-      behaviors: ["Compra en fechas clave (Día de la Madre, San Valentín)", "Busca kits/armados", "Valora la presentación"],
-      angle: "Emoción + presentación",
-      hook: "“El regalo que la va a dejar sin palabras…”",
-      lang: "Español (paraguayo)",
-      note: "Kit o producto con packaging atractivo. El gancho juega con la emoción de regalar. Segmentación temporal según el calendario de fechas comerciales de Paraguay.",
+      label: "PY · Produto de presente",
+      persona: "Mulher 25–45 que presenteia",
+      interests: ["Presentes", "Datas especiais", "Autocuidado", "Beleza para presentear"],
+      behaviors: ["Compra em datas-chave (Dia das Mães, Dia dos Namorados)", "Busca kits/combos", "Valoriza a apresentação"],
+      angle: "Emoção + apresentação",
+      hook: "“O presente que vai deixá-la sem palavras…”",
+      lang: "Espanhol (paraguaio)",
+      note: "Kit ou produto com embalagem atraente. O gancho brinca com a emoção de presentear. Segmentação temporal conforme o calendário de datas comerciais do Paraguai.",
       color: "#fbbf24",
     },
     {
       id: "br-pro",
-      label: "BR · Línea profesional",
+      label: "BR · Linha profissional",
       persona: "Profissional de beleza · Brasil",
       interests: ["Produtos profissionais", "Salão de beleza", "Cursos de maquiagem", "Atacado cosméticos"],
       behaviors: ["Compra em volume", "Participa de comunidades B2B", "Pesquisa fornecedores"],
-      angle: "Calidad profesional + rentabilidad",
+      angle: "Qualidade profissional + rentabilidade",
       hook: "“O que as profissionais usam para fidelizar clientes…”",
       lang: "Português (BR técnico)",
-      note: "Línea para maquilladoras/profesionales. Ángulo B2B: rentabilidad y fidelización de clientas. Lenguaje técnico, doblaje en portugués formal. Audiencia de menor volumen pero mayor ticket.",
+      note: "Linha para maquiadoras/profissionais. Ângulo B2B: rentabilidade e fidelização de clientes. Linguagem técnica, dublagem em português formal. Público de menor volume mas ticket maior.",
       color: "#60a5fa",
     },
   ];
@@ -82,29 +82,29 @@
   function renderContent() {
     const e = EXAMPLES.find((x) => x.id === active);
     content.innerHTML = `
-      <!-- Columna izquierda: definición de audiencia -->
+      <!-- Coluna esquerda: definição de audiência -->
       <div class="seg-block" style="--seg-color:${e.color}">
         <div class="seg-block-head" style="color:${e.color}">
           <span class="seg-block-icon">👥</span>
-          Audiencia objetivo
+          Público-alvo
         </div>
         <div class="seg-persona">${e.persona}</div>
-        <div class="mt-4 text-[11px] uppercase tracking-widest text-slate-500">Intereses</div>
+        <div class="mt-4 text-[11px] uppercase tracking-widest text-slate-500">Interesses</div>
         <div class="mt-2 flex flex-wrap gap-2">${e.interests.map(chip).join("")}</div>
-        <div class="mt-4 text-[11px] uppercase tracking-widest text-slate-500">Comportamientos</div>
+        <div class="mt-4 text-[11px] uppercase tracking-widest text-slate-500">Comportamentos</div>
         <div class="mt-2 flex flex-wrap gap-2">${e.behaviors.map(chip).join("")}</div>
-        <div class="mt-4 text-[11px] uppercase tracking-widest text-slate-500">Idioma de producción</div>
+        <div class="mt-4 text-[11px] uppercase tracking-widest text-slate-500">Idioma de produção</div>
         <div class="mt-2">${chip(e.lang)}</div>
       </div>
 
-      <!-- Columna derecha: estrategia de contenido -->
+      <!-- Coluna direita: estratégia de conteúdo -->
       <div class="seg-block">
         <div class="seg-block-head" style="color:${e.color}">
           <span class="seg-block-icon">🎬</span>
-          Estrategia creativa resultante
+          Estratégia criativa resultante
         </div>
         <div class="mt-3">
-          <div class="text-[11px] uppercase tracking-widest text-slate-500">Ángulo recomendado</div>
+          <div class="text-[11px] uppercase tracking-widest text-slate-500">Ângulo recomendado</div>
           <div class="mt-1 font-display text-lg font-semibold text-slate-100">${e.angle}</div>
         </div>
         <div class="mt-4">
@@ -112,7 +112,7 @@
           <div class="mt-1 seg-hook">${e.hook}</div>
         </div>
         <div class="mt-4 rounded-xl border border-white/5 bg-white/[0.02] p-4 text-xs text-slate-400 leading-relaxed">
-          <strong class="text-slate-200">Por qué:</strong> ${e.note}
+          <strong class="text-slate-200">Por quê:</strong> ${e.note}
         </div>
       </div>`;
   }

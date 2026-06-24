@@ -1,5 +1,5 @@
 /* =====================================================================
-   hooks.js · Matriz de ganchos creativos ( Ángulos → guion + hook 3s )
+   hooks.js · Matriz de ganchos criativos (Ângulos → roteiro + hook 3s)
    ===================================================================== */
 (function () {
   "use strict";
@@ -8,50 +8,50 @@
     {
       id: "dolor",
       icon: "😣",
-      label: "Dolor del cliente",
-      hook: '“Pare de tirar dinero en productos que no te dan resultado…”',
+      label: "Dor do cliente",
+      hook: '“Pare de jogar dinheiro fora em produtos que não dão resultado…”',
       script:
-        'Identificamos el problema frustrante que sufre el cliente y abrimos mostrando ese dolor de forma reconocible. Luego presentamos el producto de Ela Bela como la solución directa, con prueba visual y CTA de compra o mensaje privado. Cierre con la promesa de resultado en primera persona.',
+        'Identificamos o problema frustrante que o cliente sofre e abrimos mostrando essa dor de forma reconhecível. Em seguida apresentamos o produto da Ela Bela como a solução direta, com prova visual e CTA de compra ou mensagem privada. Fechamento com a promessa de resultado em primeira pessoa.',
     },
     {
       id: "demo",
       icon: "✨",
-      label: "Demostración directa",
-      hook: '“Mira esto antes de comprar…”',
+      label: "Demonstração direta",
+      hook: '“Veja isto antes de comprar…”',
       script:
-        'Vamos directo al grano: mostramos el producto en acción en los primeros 3 segundos, sin intros largas. Enfatizamos el detalle, la textura y el resultado real. Doblaje en portugués neutro y natural, con subtítulos grandes. CTA claro: “Comenta COMPRAR y te envío el link”.',
+        'Vamos direto ao ponto: mostramos o produto em ação nos primeiros 3 segundos, sem introduções longas. Enfatizamos o detalhe, a textura e o resultado real. Dublagem em português neutro e natural, com legendas grandes. CTA claro: “Comente COMPRAR e eu te envio o link”.',
     },
     {
       id: "unboxing",
       icon: "📦",
       label: "Unboxing emocional",
-      hook: '“Esto llegó hoy y no puedo creerlo…”',
+      hook: '“Isto chegou hoje e eu não acredito…”',
       script:
-        'Abrimos con la emoción del unboxing: manos, packaging, primer contacto con el producto. Generamos curiosidad y deseo. La voz del influencer de IA transmite asombro genuino en portugués brasileño. Cerramos con escasez (“últimas unidades”) y link en bio.',
+        'Abrimos com a emoção do unboxing: mãos, embalagem, primeiro contato com o produto. Geramos curiosidade e desejo. A voz do influenciador de IA transmite um espanto genuíno em português brasileiro. Fechamos com escassez (“últimas unidades”) e link na bio.',
     },
     {
       id: "social",
       icon: "🔥",
-      label: "Prueba social",
-      hook: '“Por qué todos están hablando de esto…”',
+      label: "Prova social",
+      hook: '“Por que todo mundo está falando disto…”',
       script:
-        'Construimos autoridad mostrando que muchas personas ya eligieron el producto: capturas de reseñas, comentarios, antes/después. El gancho activa el sesgo de pertenencia. El influencer de IA lo presenta con energía y credibilidad. CTA: “Únete a los que ya lo probaron”.',
+        'Construímos autoridade mostrando que muitas pessoas já escolheram o produto: prints de avaliações, comentários, antes/depois. O gancho ativa o viés de pertencimento. O influenciador de IA apresenta com energia e credibilidade. CTA: “Junte-se a quem já experimentou”.',
     },
     {
       id: "transformation",
       icon: "🚀",
-      label: "Transformación",
-      hook: '“De esto… a esto, en una semana…”',
+      label: "Transformação",
+      hook: '“Disto… para isto, em uma semana…”',
       script:
-        'Mostramos un antes y después claro y aspiracional. El producto es el puente entre el estado actual y el deseado. Narramos la transformación con voz persuasiva en portugués. Cierre con garantía/riesgo cero y CTA de compra directa o WhatsApp.',
+        'Mostramos um antes e depois claro e aspiracional. O produto é a ponte entre o estado atual e o desejado. Narramos a transformação com voz persuasiva em português. Fechamento com garantia/risco zero e CTA de compra direta ou WhatsApp.',
     },
     {
       id: "curiosidad",
       icon: "🤫",
-      label: "Curiosidad / truco",
-      hook: '“El truco que nadie te cuenta sobre…”',
+      label: "Curiosidade / truque",
+      hook: '“O truque que ninguém te conta sobre…”',
       script:
-        'Abrimos con un misterio o dato contraintuitivo que detiene el scroll. Mantenemos la tensión 3-5 segundos antes de revelar que la respuesta es el producto de Ela Bela. Voz en off intrigante. CTA que invita a descubrir más escribiendo por DM.',
+        'Abrimos com um mistério ou dado contraintuitivo que para o scroll. Mantemos a tensão por 3-5 segundos antes de revelar que a resposta é o produto da Ela Bela. Voz em off intrigante. CTA que convida a descobrir mais escrevendo por DM.',
     },
   ];
 
@@ -79,12 +79,12 @@
       <div class="hook-block">
         <h4>⚡ Gancho de 3 segundos</h4>
         <p class="hook-script">${a.hook}</p>
-        <p class="mt-3 text-xs text-slate-500">Generado para detener el scroll y retener la atención en la ventana crítica.</p>
+        <p class="mt-3 text-xs text-slate-500">Gerado para parar o scroll e reter a atenção na janela crítica.</p>
       </div>
       <div class="hook-block">
-        <h4>🎬 Guion rápido (Higgsfield + ElevenLabs)</h4>
+        <h4>🎬 Roteiro rápido (Higgsfield + ElevenLabs)</h4>
         <p class="hook-script">${a.script}</p>
-        <p class="mt-3 text-xs text-slate-500">Producción lista en un solo día · doblaje perfecto al portugués brasileño.</p>
+        <p class="mt-3 text-xs text-slate-500">Produção pronta em um único dia · dublagem perfeita em português brasileiro.</p>
       </div>`;
   }
 

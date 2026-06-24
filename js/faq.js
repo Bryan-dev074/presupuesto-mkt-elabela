@@ -1,33 +1,33 @@
 /* =====================================================================
-   faq.js · Acorón de preguntas frecuentes
+   faq.js · Acordeão de perguntas frequentes
    ===================================================================== */
 (function () {
   "use strict";
 
   const FAQS = [
     {
-      q: "¿Se nota que el influencer es IA?",
-      a: "Con Higgsfield + ElevenLabs el resultado es visual y vocalmente realista, con doblaje natural al portugués brasileño. El objetivo no es engañar, sino producir contenido de alta calidad a velocidad industrial. Además, las plataformas cada vez normalizan más el contenido generado con IA cuando aporta valor real al espectador.",
+      q: "Dá para perceber que o influenciador é IA?",
+      a: "Com Higgsfield + ElevenLabs o resultado é visual e vocalmente realista, com dublagem natural em português brasileiro. O objetivo não é enganar, e sim produzir conteúdo de alta qualidade em velocidade industrial. Além disso, as plataformas normalizam cada vez mais o conteúdo gerado com IA quando ele agrega valor real ao espectador.",
     },
     {
-      q: "¿Qué pasa si se acaban los caracteres de ElevenLabs?",
-      a: "El plan Starter ($6/mes) cubre con holgura la producción de la Fase 1. Si la demanda de videos crece, el plan es escalable por tramos muy bajos. Monitorizo el consumo semanalmente y ajusto antes de que exista riesgo de corte, de modo que la producción nunca se detiene.",
+      q: "O que acontece se os caracteres do ElevenLabs acabarem?",
+      a: "O plano Starter ($6/mês) cobre com folga a produção da Fase 1. Se a demanda de vídeos crescer, o plano é escalável por faixas muito baixas. Monitoro o consumo semanalmente e ajusto antes que exista risco de corte, de modo que a produção nunca para.",
     },
     {
-      q: "¿Por qué TikTok Ads está pausado en la Fase 1?",
-      a: "TikTok exige un mínimo técnico de $20 USD diarios (~$600/mes). Para optimizar el presupuesto inicial, concentramos la inversión en Meta y YouTube, que ya empujan el crecimiento orgánico de TikTok como canal colateral a costo cero. Cuando los datos lo justifiquen, activamos la pauta pagada en TikTok en la Fase 2.",
+      q: "Por que o TikTok Ads está pausado na Fase 1?",
+      a: "O TikTok exige um mínimo técnico de $20 USD por dia (~$600/mês). Para otimizar o orçamento inicial, concentramos o investimento em Meta e YouTube, que já impulsionam o crescimento orgânico do TikTok como canal colateral a custo zero. Quando os dados justificarem, ativamos a mídia paga no TikTok na Fase 2.",
     },
     {
-      q: "¿Cómo medimos que la campaña funciona?",
-      a: "Con dos métricas de negocio, no de vanidad: compras realizadas en la tienda online y mensajes privados (DM/WhatsApp) cualificados. Reportamos el costo de adquisición (CPA) por anuncio y optimizamos en consecuencia. Si un ángulo no convierte, se rota en 3–5 días.",
+      q: "Como medimos se a campanha funciona?",
+      a: "Com duas métricas de negócio, não de vaidade: compras realizadas na loja online e mensagens privadas (DM/WhatsApp) qualificadas. Reportamos o custo de aquisição (CPA) por anúncio e otimizamos de acordo. Se um ângulo não converte, é trocado em 3–5 dias.",
     },
     {
-      q: "¿Cuánto tardamos en ver resultados?",
-      a: "La configuración técnica toma unos días. Los primeros anuncios de prueba corren en ciclos de 3–5 días, por lo que las primeras señales de rendimiento (clics, mensajes, ventas) suelen aparecer en las primeras dos semanas, con optimización continua a partir de ahí.",
+      q: "Em quanto tempo vemos resultados?",
+      a: "A configuração técnica leva alguns dias. Os primeiros anúncios de teste rodam em ciclos de 3–5 dias, então os primeiros sinais de desempenho (cliques, mensagens, vendas) costumam aparecer nas primeiras duas semanas, com otimização contínua a partir daí.",
     },
     {
-      q: "¿El presupuesto puede ajustarse en cualquier momento?",
-      a: "Sí. Los deslizadores de la calculadora reflejan exactamente cómo trabajamos: el presupuesto diario de Meta y YouTube puede subirse o bajarse sobre la marcha. Nada es rígido — todo se optimiza según el rendimiento real.",
+      q: "O orçamento pode ser ajustado a qualquer momento?",
+      a: "Sim. Os controles deslizantes da calculadora refletem exatamente como trabalhamos: o orçamento diário de Meta e YouTube pode ser aumentado ou reduzido em tempo real. Nada é rígido — tudo se otimiza conforme o desempenho real.",
     },
   ];
 

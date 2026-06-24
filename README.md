@@ -1,126 +1,126 @@
-# Propuesta de Marketing Digital · Ela Bela
+# Proposta de Marketing Digital · Ela Bela
 
-Aplicación web interactiva, ultra moderna y persuasiva para presentar a la dirección de **Ela Bela** una propuesta de campaña de validación internacional con **Influencers de IA** (Higgsfield + ElevenLabs), producción bilingüe **español (Paraguay) + portugués (Brasil)**, distribución en Meta / YouTube / TikTok y gestión estratégica incluida a costo cero.
+Aplicação web interativa, ultramoderna e persuasiva para apresentar à diretoria da **Ela Bela** uma proposta de campanha de validação internacional com **Influenciadores de IA** (Higgsfield + ElevenLabs), produção bilíngue **espanhol (Paraguai) + português (Brasil)**, distribuição em Meta / YouTube / TikTok e gestão estratégica incluída a custo zero.
 
-> Stack: HTML + **Tailwind CSS (compilado a un CSS estático)** + JavaScript modular (vanilla). Sitio 100% estático, sin dependencias externas en tiempo de ejecución. Despliegue directo en GitHub Pages servido desde la rama `main`.
-
----
-
-## ✨ Características
-
-- **Navbar + Footer** con logo de Ela Bela (`assets/glow.png`), scroll suave, menú móvil y **resaltado del enlace activo** (scrollspy).
-- **Barra de progreso de scroll** y **botón "volver arriba"** flotante.
-- **Resumen ejecutivo (TL;DR)** interactivo: Qué · Por qué · Para qué en 30 segundos.
-- **El cerebro de la campaña (sección estrella)**: la complejidad oculta de la pauta digital, mano de obra a $0, **ejemplo interactivo de segmentación por público/idioma** (4 casos reales PY/BR) y metodología de investigación (Google Trends, TikTok Creative Center, Biblioteca de Anuncios de Meta, analizadores de anuncios, control de CPA, testeo A/B).
-- **Calculadora de presupuesto en tiempo real**: sliders de Meta y YouTube, toggle de TikTok con mínimo técnico de $20/día, totalizador animado y desglose.
-- **Exportación a PDF**: botón *Imprimir propuesta personalizada* que genera un PDF con la configuración exacta.
-- **Comparativa IA vs. Humano** con conmutador visual.
-- **Embudo de conversión** con **mapa de flujo tipo diagrama** (Producción IA → mercados → canales → salidas de negocio → loop de optimización).
-- **Simulador Fast Ad Iteration**: slider de días (1–10) con medidor de fatiga publicitaria.
-- **Matriz de ganchos creativos**: 6 ángulos con hook de 3s y guion generado al instante.
-- **FAQ** en acordeón moderno.
-- **CTA "Dar Luz Verde"** con confeti + modal de compromiso.
-- Paleta premium **Slate/Zinc + Teal**, glassmorphism, animaciones suaves (contadores animados, parallax sutil, reveal con desenfoque), accesibilidad y modo de impresión optimizado.
+> Stack: HTML + **Tailwind CSS (compilado em um CSS estático)** + JavaScript modular (vanilla). Site 100% estático, sem dependências externas em tempo de execução. Deploy direto no GitHub Pages servido a partir da branch `main`.
 
 ---
 
-## 📁 Estructura del proyecto
+## ✨ Funcionalidades
+
+- **Navbar + Footer** com logo da Ela Bela (`assets/glow.png`), scroll suave, menu mobile e **destaque do link ativo** (scrollspy).
+- **Barra de progresso de scroll** e **botão "voltar ao topo"** flutuante.
+- **Resumo executivo (TL;DR)** interativo: O quê · Por quê · Para quê em 30 segundos.
+- **O cérebro da campanha (seção estrela)**: a complexidade oculta da mídia paga digital, mão de obra a $0, **exemplo interativo de segmentação por público/idioma** (4 casos reais PY/BR) e metodologia de pesquisa (Google Trends, TikTok Creative Center, Biblioteca de Anúncios da Meta, analisadores de anúncios, controle de CPA, testes A/B).
+- **Calculadora de orçamento em tempo real**: sliders de Meta e YouTube, toggle do TikTok com mínimo técnico de $20/dia, totalizador animado e detalhamento.
+- **Exportação para PDF**: botão *Imprimir proposta personalizada* que gera um PDF com a configuração exata.
+- **Comparativo IA vs. Humano** com chave de troca visual.
+- **Funil de conversão** com **mapa de fluxo tipo diagrama** (Produção IA → mercados → canais → saídas de negócio → loop de otimização).
+- **Simulador Fast Ad Iteration**: slider de dias (1–10) com medidor de fadiga publicitária.
+- **Matriz de ganchos criativos**: 6 ângulos com hook de 3s e roteiro gerado na hora.
+- **FAQ** em acordeão moderno.
+- **CTA "Dar Sinal Verde"** que abre o WhatsApp (link `wa.me`) com confete de celebração.
+- Paleta premium **Slate/Zinc + Teal**, glassmorphism, animações suaves (contadores animados, parallax sutil, reveal com desfoque), acessibilidade e modo de impressão otimizado.
+
+---
+
+## 📁 Estrutura do projeto
 
 ```
 presupuesto-mkt-elabela/
-├── index.html              # Marcado completo de todas las secciones
-├── tailwind.config.js      # Configuración de Tailwind (tema, colores, animaciones)
-├── .nojekyll               # Evita el procesamiento Jekyll en GitHub Pages
+├── index.html              # Marcação completa de todas as seções
+├── tailwind.config.js      # Configuração do Tailwind (tema, cores, animações)
+├── .nojekyll               # Evita o processamento Jekyll no GitHub Pages
 ├── css/
-│   ├── tailwind.input.css  # Entrada de Tailwind (@tailwind base/components/utilities)
-│   ├── tailwind.css         # ⚙️ CSS de Tailwind COMPILADO (generado — no editar a mano)
-│   └── styles.css          # Estilos premium propios (paleta, sliders, glassmorphism, diagrama, print)
+│   ├── tailwind.input.css  # Entrada do Tailwind (@tailwind base/components/utilities)
+│   ├── tailwind.css         # ⚙️ CSS do Tailwind COMPILADO (gerado — não editar à mão)
+│   └── styles.css          # Estilos premium próprios (paleta, sliders, glassmorphism, diagrama, print)
 ├── js/
-│   ├── app.js              # Navbar, scroll, menú móvil, reveal, modal (Escape)
-│   ├── enhance.js          # Progreso de scroll, scrollspy, volver arriba, contadores, parallax
-│   ├── calculator.js       # Calculadora de presupuesto + exportación PDF
+│   ├── app.js              # Navbar, scroll, menu mobile, reveal
+│   ├── enhance.js          # Progresso de scroll, scrollspy, voltar ao topo, contadores, parallax
+│   ├── calculator.js       # Calculadora de orçamento + exportação PDF
 │   ├── comparison.js       # Toggle IA vs. Humano
-│   ├── simulator.js        # Fast Ad Iteration + fatiga
-│   ├── segmentation.js     # Ejemplo interactivo de segmentación por público
-│   ├── hooks.js            # Matriz de ganchos creativos
-│   ├── faq.js              # Acordeón de preguntas frecuentes
-│   ├── confetti.js         # Efecto festivo + modal "Dar Luz Verde"
-│   └── spotlight.js        # Glow que sigue el cursor en las tarjetas de herramientas
+│   ├── simulator.js        # Fast Ad Iteration + fadiga
+│   ├── segmentation.js     # Exemplo interativo de segmentação por público
+│   ├── hooks.js            # Matriz de ganchos criativos
+│   ├── faq.js              # Acordeão de perguntas frequentes
+│   ├── confetti.js         # Efeito festivo no botão "Dar Sinal Verde"
+│   └── spotlight.js        # Glow que segue o cursor nos cards de ferramentas
 ├── assets/
-│   ├── glow.png            # Logo real de Ela Bela (usado en Navbar/Footer/favicon)
-│   └── logo-elabela.svg    # Logo placeholder (no referenciado, reemplazado por glow.png)
+│   ├── glow.png            # Logo real da Ela Bela (usado em Navbar/Footer/favicon)
+│   └── logo-elabela.svg    # Logo placeholder (não referenciado, substituído por glow.png)
 └── README.md
 ```
 
-### 🔁 Reemplazar el logo real de Ela Bela
+### 🔁 Substituir o logo real da Ela Bela
 
-El proyecto ya usa el logo real de la tienda en `assets/glow.png` (integrado como "sello de marca" en un chip claro sobre el fondo oscuro, en Navbar, Footer y favicon). Para cambiarlo por otro archivo:
+O projeto já usa o logo real da loja em `assets/glow.png` (integrado como "selo de marca" em um chip claro sobre o fundo escuro, na Navbar, Footer e favicon). Para trocá-lo por outro arquivo:
 
-1. Guarda tu imagen como **`assets/glow.png`** (recomendado: PNG con fondo claro/transparente, ≥ 300×300 px para mantener nitidez).
-2. En `index.html`, las referencias ya apuntan a `assets/glow.png` (Navbar, Footer y `<link rel="icon">`). Solo sobrescribe el archivo.
-3. El chip del logo usa la clase `.logo-chip` (en `css/styles.css`).
+1. Salve sua imagem como **`assets/glow.png`** (recomendado: PNG com fundo claro/transparente, ≥ 300×300 px para manter a nitidez).
+2. No `index.html`, as referências já apontam para `assets/glow.png` (Navbar, Footer e `<link rel="icon">`). Basta sobrescrever o arquivo.
+3. O chip do logo usa a classe `.logo-chip` (em `css/styles.css`).
 
 ---
 
-## 🎨 Reconstruir los estilos de Tailwind
+## 🎨 Recompilar os estilos do Tailwind
 
-Los estilos de Tailwind están **precompilados** en `css/tailwind.css` (por eso el sitio carga al instante y no depende de ningún CDN externo). Solo necesitas recompilar si **agregas o cambias clases de Tailwind** en el HTML o en los archivos JS:
+Os estilos do Tailwind estão **pré-compilados** em `css/tailwind.css` (por isso o site carrega na hora e não depende de nenhum CDN externo). Você só precisa recompilar se **adicionar ou mudar classes do Tailwind** no HTML ou nos arquivos JS:
 
 ```bash
 npx tailwindcss@3 -i css/tailwind.input.css -o css/tailwind.css --minify
 ```
 
-> El escaneo de clases se configura en `tailwind.config.js` (`content: ["./index.html", "./js/**/*.js"]`). No edites `css/tailwind.css` a mano: se sobrescribe en cada compilación.
+> A varredura de classes é configurada em `tailwind.config.js` (`content: ["./index.html", "./js/**/*.js"]`). Não edite `css/tailwind.css` à mão: ele é sobrescrito a cada compilação.
 
 ---
 
-## 🚀 Despliegue en GitHub Pages
+## 🚀 Deploy no GitHub Pages
 
-Como el sitio es **100% estático** (el CSS de Tailwind ya está compilado), GitHub Pages lo sirve directamente desde la rama `main`, sin workflow ni paso de build:
+Como o site é **100% estático** (o CSS do Tailwind já está compilado), o GitHub Pages o serve diretamente a partir da branch `main`, sem workflow nem etapa de build:
 
-1. Entra al repositorio en GitHub → pestaña **Settings**.
-2. Menú lateral izquierdo → **Pages**.
-3. En **Build and deployment** → *Source* selecciona **Deploy from a branch**.
-4. En *Branch* elige **`main`** y carpeta **`/ (root)`**, y pulsa **Save**.
+1. Entre no repositório no GitHub → aba **Settings**.
+2. Menu lateral esquerdo → **Pages**.
+3. Em **Build and deployment** → *Source* selecione **Deploy from a branch**.
+4. Em *Branch* escolha **`main`** e a pasta **`/ (root)`**, e clique em **Save**.
 
-En 1–2 minutos tu propuesta estará pública en:
+Em 1–2 minutos sua proposta estará pública em:
 
 ```
 https://bryan-dev074.github.io/presupuesto-mkt-elabela/
 ```
 
-El archivo `.nojekyll` (en la raíz) evita que GitHub procese el sitio con Jekyll, sirviéndolo tal cual.
+O arquivo `.nojekyll` (na raiz) evita que o GitHub processe o site com Jekyll, servindo-o como está.
 
-> **⚠️ Importante — usar UN solo mecanismo de despliegue.** No combines *"Deploy from a branch"* con un workflow de GitHub Actions que también despliegue a Pages: ambos compiten por el mismo entorno `github-pages` y se bloquean/cancelan mutuamente (esa era la causa de los errores). Por eso este proyecto usa únicamente el modo rama. Si en el futuro prefieres GitHub Actions, cambia *Source* a **"GitHub Actions"** y añade un workflow — pero entonces **no** uses también el modo rama.
+> **⚠️ Importante — usar UM único mecanismo de deploy.** Não combine *"Deploy from a branch"* com um workflow do GitHub Actions que também faça deploy para o Pages: ambos competem pelo mesmo ambiente `github-pages` e se bloqueiam/cancelam mutuamente (essa era a causa dos erros). Por isso este projeto usa apenas o modo branch. Se no futuro você preferir GitHub Actions, mude *Source* para **"GitHub Actions"** e adicione um workflow — mas então **não** use também o modo branch.
 
-### Publicar cambios
+### Publicar mudanças
 
 ```bash
 git add .
-git commit -m "tu mensaje"
+git commit -m "sua mensagem"
 git push origin main
 ```
 
-Cada `push` a `main` se publica solo en 1–2 minutos.
+Cada `push` na `main` é publicado sozinho em 1–2 minutos.
 
 ---
 
-## 🖨️ Uso de la calculadora
+## 🖨️ Uso da calculadora
 
-1. Mueve los sliders de Meta y YouTube.
-2. Activa/desactiva TikTok (aplica automáticamente el mínimo de $20/día).
-3. Observa el total mensual recalcularse en tiempo real.
-4. Pulsa **"Imprimir / exportar propuesta (PDF)"** y elige *Guardar como PDF*.
-
----
-
-## ♿ Accesibilidad y rendimiento
-
-- Navegación por teclado y `aria-*` en controles interactivos.
-- Respeta `prefers-reduced-motion` (desactiva animaciones para quien lo prefiere).
-- **CSS de Tailwind compilado y minificado** (~24 KB): carga instantánea, sin CDN externo ni FOUC, funciona aunque la red bloquee servicios de terceros.
-- Fallback `<noscript>`: el contenido se muestra completo aunque JavaScript esté desactivado.
+1. Mova os sliders de Meta e YouTube.
+2. Ative/desative o TikTok (aplica automaticamente o mínimo de $20/dia).
+3. Veja o total mensal recalcular em tempo real.
+4. Clique em **"Imprimir / exportar proposta (PDF)"** e escolha *Salvar como PDF*.
 
 ---
 
-**Confidencial · Preparado para la dirección de Ela Bela · 2026**
+## ♿ Acessibilidade e desempenho
+
+- Navegação por teclado e `aria-*` nos controles interativos.
+- Respeita `prefers-reduced-motion` (desativa animações para quem preferir).
+- **CSS do Tailwind compilado e minificado** (~24 KB): carga instantânea, sem CDN externo nem FOUC, funciona mesmo que a rede bloqueie serviços de terceiros.
+- Fallback `<noscript>`: o conteúdo é exibido completo mesmo com o JavaScript desativado.
+
+---
+
+**Confidencial · Preparado para a diretoria da Ela Bela · 2026**
