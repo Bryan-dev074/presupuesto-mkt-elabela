@@ -1,0 +1,974 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Propuesta de Marketing Digital para Ela Bella — Campaña de Validación con Influencers de IA. Estrategia de segmentación, producción bilingüe y comparativa IA vs. Humano." />
+  <title>Ela Bella · Propuesta de Marketing Digital con IA</title>
+
+  <!-- Favicon (logo real) -->
+  <link rel="icon" type="image/png" href="assets/glow.png" />
+
+  <!-- Tailwind CSS (CDN optimizado) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            ink: {
+              900: '#0a0f1a',
+              800: '#0f1623',
+              700: '#161e2e',
+              600: '#1e2839',
+              500: '#2a364c',
+            },
+            teal: {
+              glow: '#2dd4bf',
+              DEFAULT: '#14b8a6',
+              deep: '#0d9488',
+            },
+          },
+          fontFamily: {
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+            display: ['"Space Grotesk"', 'Inter', 'sans-serif'],
+          },
+          animation: {
+            'float': 'float 6s ease-in-out infinite',
+            'pulse-glow': 'pulseGlow 3s ease-in-out infinite',
+            'shimmer': 'shimmer 2.5s linear infinite',
+          },
+          keyframes: {
+            float: {
+              '0%,100%': { transform: 'translateY(0px)' },
+              '50%': { transform: 'translateY(-12px)' },
+            },
+            pulseGlow: {
+              '0%,100%': { boxShadow: '0 0 20px rgba(45,212,191,0.3)' },
+              '50%': { boxShadow: '0 0 40px rgba(45,212,191,0.6)' },
+            },
+            shimmer: {
+              '0%': { backgroundPosition: '-200% 0' },
+              '100%': { backgroundPosition: '200% 0' },
+            },
+          },
+        },
+      },
+    };
+  </script>
+
+  <!-- Fuentes -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Estilos propios -->
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body class="bg-ink-900 text-slate-200 font-sans antialiased selection:bg-teal-glow/30 selection:text-white">
+
+  <!-- ===== Fondo decorativo ===== -->
+  <div class="fixed inset-0 -z-10 overflow-hidden pointer-events-none" aria-hidden="true">
+    <div class="absolute -top-40 -left-40 h-[500px] w-[500px] rounded-full bg-teal/10 blur-[120px]"></div>
+    <div class="absolute top-1/3 -right-40 h-[500px] w-[500px] rounded-full bg-teal-deep/10 blur-[120px]"></div>
+    <div class="absolute bottom-0 left-1/3 h-[400px] w-[400px] rounded-full bg-indigo-500/5 blur-[100px]"></div>
+    <div class="grid-bg absolute inset-0 opacity-[0.025]"></div>
+  </div>
+
+  <!-- ===== Navbar ===== -->
+  <header id="navbar" class="fixed top-0 inset-x-0 z-50 transition-all duration-300">
+    <nav class="mx-auto max-w-7xl px-5 sm:px-8">
+      <div class="nav-shell mt-4 flex items-center justify-between rounded-2xl border border-white/10 bg-ink-800/70 px-4 py-3 backdrop-blur-xl transition-all duration-300">
+        <!-- Logo (sello de marca sobre fondo oscuro) -->
+        <a href="#top" class="flex items-center gap-3 group">
+          <span class="logo-chip"><img src="assets/glow.png" alt="Ela Bella" class="h-full w-full object-contain" /></span>
+          <span class="hidden sm:block text-xs uppercase tracking-[0.25em] text-slate-400 group-hover:text-teal-glow transition-colors">Propuesta 2026</span>
+        </a>
+
+        <!-- Links desktop -->
+        <ul class="hidden lg:flex items-center gap-1 text-sm">
+          <li><a href="#tldr" class="nav-link">Resumen</a></li>
+          <li><a href="#cerebro" class="nav-link">Estrategia</a></li>
+          <li><a href="#calculadora" class="nav-link">Presupuesto</a></li>
+          <li><a href="#comparativa" class="nav-link">IA vs Humano</a></li>
+          <li><a href="#embudo" class="nav-link">Embudo</a></li>
+          <li><a href="#simulador" class="nav-link">Simulador</a></li>
+          <li><a href="#faq" class="nav-link">FAQ</a></li>
+        </ul>
+
+        <!-- CTA + mobile toggle -->
+        <div class="flex items-center gap-3">
+          <a href="#luz-verde" class="hidden sm:inline-flex items-center gap-2 rounded-xl bg-teal px-4 py-2 text-sm font-semibold text-ink-900 shadow-lg shadow-teal/20 transition-all hover:bg-teal-glow hover:shadow-teal-glow/40 hover:-translate-y-0.5">
+            Dar Luz Verde
+            <span aria-hidden="true">→</span>
+          </a>
+          <button id="mobileToggle" class="lg:hidden inline-flex h-10 w-10 items-center justify-center rounded-xl border border-white/10 bg-white/5 text-slate-200" aria-label="Abrir menú" aria-expanded="false">
+            <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Mobile menu -->
+      <div id="mobileMenu" class="lg:hidden hidden mt-2 rounded-2xl border border-white/10 bg-ink-800/95 p-3 backdrop-blur-xl">
+        <ul class="flex flex-col gap-1 text-sm">
+          <li><a href="#tldr" class="mobile-link block rounded-lg px-4 py-3 hover:bg-white/5">Resumen ejecutivo</a></li>
+          <li><a href="#cerebro" class="mobile-link block rounded-lg px-4 py-3 hover:bg-white/5">El cerebro de la campaña</a></li>
+          <li><a href="#calculadora" class="mobile-link block rounded-lg px-4 py-3 hover:bg-white/5">Calculadora de presupuesto</a></li>
+          <li><a href="#comparativa" class="mobile-link block rounded-lg px-4 py-3 hover:bg-white/5">IA vs Humano</a></li>
+          <li><a href="#embudo" class="mobile-link block rounded-lg px-4 py-3 hover:bg-white/5">Embudo de conversión</a></li>
+          <li><a href="#simulador" class="mobile-link block rounded-lg px-4 py-3 hover:bg-white/5">Simulador de testeo</a></li>
+          <li><a href="#faq" class="mobile-link block rounded-lg px-4 py-3 hover:bg-white/5">Preguntas frecuentes</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <main id="top">
+    <!-- ===== HERO ===== -->
+    <section class="relative pt-36 pb-20 sm:pt-44 sm:pb-28">
+      <div class="mx-auto max-w-7xl px-5 sm:px-8">
+        <div class="grid lg:grid-cols-12 gap-12 items-center">
+          <div class="lg:col-span-7 reveal">
+            <span class="inline-flex items-center gap-2 rounded-full border border-teal/30 bg-teal/10 px-4 py-1.5 text-xs font-medium text-teal-glow">
+              <span class="relative flex h-2 w-2"><span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-teal-glow opacity-75"></span><span class="relative inline-flex h-2 w-2 rounded-full bg-teal-glow"></span></span>
+              Propuesta confidencial para la dirección de Ela Bella
+            </span>
+            <h1 class="mt-6 font-display text-4xl sm:text-5xl lg:text-6xl font-bold leading-[1.05] tracking-tight text-white">
+              Propuesta de <span class="gradient-text">Marketing Digital</span><br class="hidden sm:block" /> con Influencers de IA
+            </h1>
+            <p class="mt-6 max-w-2xl text-lg text-slate-400 leading-relaxed">
+              Una campaña de validación internacional de <strong class="text-slate-200">bajo riesgo y altísima rentabilidad</strong>. Producimos contenido ilimitado <strong class="text-teal-glow">en español y portugués</strong> con IA por una fracción del costo de un solo influencer real — y gestionamos toda la segmentación y distribución a <strong class="text-teal-glow">costo cero de mano de obra</strong>.
+            </p>
+            <div class="mt-8 flex flex-wrap gap-4">
+              <a href="#cerebro" class="inline-flex items-center gap-2 rounded-xl bg-teal px-6 py-3.5 text-sm font-semibold text-ink-900 shadow-lg shadow-teal/25 transition-all hover:bg-teal-glow hover:shadow-teal-glow/40 hover:-translate-y-0.5">
+                Ver mi estrategia
+                <span aria-hidden="true">↓</span>
+              </a>
+              <a href="#tldr" class="inline-flex items-center gap-2 rounded-xl border border-white/15 bg-white/5 px-6 py-3.5 text-sm font-semibold text-slate-200 transition-all hover:bg-white/10 hover:-translate-y-0.5">
+                Leer resumen (30s)
+              </a>
+            </div>
+
+            <!-- KPIs rápidos -->
+            <div class="mt-10 grid grid-cols-3 gap-4 max-w-xl">
+              <div class="kpi"><div class="kpi-num">~94%</div><div class="kpi-label">Ahorro vs. influencer real</div></div>
+              <div class="kpi"><div class="kpi-num">2 idiomas</div><div class="kpi-label">ES (PY) + PT (BR)</div></div>
+              <div class="kpi"><div class="kpi-num">$0</div><div class="kpi-label">Gestión estratégica</div></div>
+            </div>
+          </div>
+
+          <!-- Tarjeta flotante -->
+          <div class="lg:col-span-5 reveal" style="transition-delay:.15s">
+            <div class="float-card relative">
+              <div class="absolute -inset-0.5 rounded-3xl bg-gradient-to-br from-teal/40 via-transparent to-indigo-500/20 opacity-60 blur-md"></div>
+              <div class="relative rounded-3xl border border-white/10 bg-ink-700/80 p-7 backdrop-blur-xl">
+                <div class="flex items-center justify-between">
+                  <span class="text-xs uppercase tracking-widest text-slate-400">Inversión base mensual</span>
+                  <span class="rounded-lg bg-teal/15 px-2.5 py-1 text-[11px] font-semibold text-teal-glow">PRODUCCIÓN IA</span>
+                </div>
+                <div class="mt-4 flex items-end gap-2">
+                  <span class="font-display text-5xl font-bold text-white">$135</span>
+                  <span class="mb-1.5 text-sm text-slate-400">USD / mes</span>
+                </div>
+                <p class="mt-1 text-sm text-slate-500">Higgsfield Ultra + ElevenLabs Starter · producción ilimitada en español y portugués</p>
+                <div class="my-6 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent"></div>
+                <ul class="space-y-3 text-sm">
+                  <li class="flex gap-3"><span class="mt-0.5 text-teal-glow">✓</span><span><strong class="text-slate-200">Doblaje bilingüe</strong> al español (PY) y portugués (BR)</span></li>
+                  <li class="flex gap-3"><span class="mt-0.5 text-teal-glow">✓</span><span><strong class="text-slate-200">Influencers sintéticos</strong> sin derechos de imagen limitados</span></li>
+                  <li class="flex gap-3"><span class="mt-0.5 text-teal-glow">✓</span><span><strong class="text-slate-200">Rotación diaria</strong> de anuncios contra la fatiga publicitaria</span></li>
+                  <li class="flex gap-3"><span class="mt-0.5 text-teal-glow">✓</span><span><strong class="text-slate-200">Segmentación + edición</strong> incluidas a costo cero</span></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== TL;DR ===== -->
+    <section id="tldr" class="py-20 sm:py-28">
+      <div class="mx-auto max-w-7xl px-5 sm:px-8">
+        <div class="section-head reveal">
+          <span class="section-tag">Resumen ejecutivo</span>
+          <h2 class="section-title">La propuesta en <span class="gradient-text">30 segundos</span></h2>
+          <p class="section-sub">Tres ideas claras. Sin rodeos. Diseñadas para que la junta entienda el valor de inmediato.</p>
+        </div>
+
+        <div class="mt-14 grid md:grid-cols-3 gap-6">
+          <article class="tldr-card reveal">
+            <div class="tldr-icon bg-teal/15 text-teal-glow">①</div>
+            <h3 class="tldr-h">¿Qué hacemos?</h3>
+            <p class="tldr-p">Producir contenido publicitario <strong class="text-slate-100">en español (Paraguay) y portugués (Brasil)</strong> usando <strong class="text-slate-100">influencers generados con IA</strong> (Higgsfield + ElevenLabs) y distribuirlo en <strong class="text-slate-100">Meta Reels y YouTube Shorts</strong>, con TikTok orgánico activado de forma colateral.</p>
+          </article>
+
+          <article class="tldr-card reveal" style="transition-delay:.1s">
+            <div class="tldr-icon bg-amber-400/15 text-amber-300">②</div>
+            <h3 class="tldr-h">¿Por qué IA?</h3>
+            <p class="tldr-p">Un solo video de UGC real cuesta <strong class="text-slate-100">$300–$500 USD</strong> con derechos de imagen limitados. La IA produce <strong class="text-slate-100">videos ilimitados por $135 USD/mes</strong>. Mismo impacto, una fracción del costo, cero riesgos contractuales.</p>
+          </article>
+
+          <article class="tldr-card reveal" style="transition-delay:.2s">
+            <div class="tldr-icon bg-indigo-400/15 text-indigo-300">③</div>
+            <h3 class="tldr-h">¿El resultado?</h3>
+            <p class="tldr-p">Una <strong class="text-slate-100">máquina de testeo sin fricción</strong>: docenas de anuncios rotando cada semana, optimizados contra la fatiga y medidos por ventas reales (no por likes). Si algo no vende, se reemplaza en <strong class="text-slate-100">3 días</strong>. Si vende, se escala. Así se descubre, con datos, <strong class="text-slate-100">qué hace crecer a Ela Bella</strong>.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================================
+         EL CEREBRO — SECCIÓN ESTRELLA (subida de posición)
+         ===================================================================== -->
+    <section id="cerebro" class="py-20 sm:py-28">
+      <div class="mx-auto max-w-7xl px-5 sm:px-8">
+        <div class="section-head reveal">
+          <span class="section-tag">El cerebro detrás de la campaña · Mi valor estratégico</span>
+          <h2 class="section-title">No es "poner dinero". Es <span class="gradient-text">ingeniería de tráfico</span></h2>
+          <p class="section-sub">La diferencia entre quemar presupuesto y dominar un mercado está en el trabajo invisible que hay detrás de cada campaña. Esto es exactamente lo que yo hago — y está incluido a costo cero para Ela Bella.</p>
+        </div>
+
+        <!-- Banner de mano de obra $0 -->
+        <div class="mt-12 reveal">
+          <div class="relative overflow-hidden rounded-3xl border border-teal/25 bg-gradient-to-r from-teal/[0.12] via-teal/[0.05] to-transparent p-7 sm:p-9 backdrop-blur-xl">
+            <div class="absolute right-0 top-0 h-40 w-40 rounded-full bg-teal/15 blur-3xl"></div>
+            <div class="relative flex flex-col sm:flex-row sm:items-center justify-between gap-5">
+              <div>
+                <span class="inline-flex items-center gap-2 rounded-full bg-teal/15 px-3 py-1 text-xs font-bold uppercase tracking-wider text-teal-glow">Incluido · $0 USD</span>
+                <h3 class="mt-3 font-display text-2xl font-bold text-white">Toda la gestión estratégica corre por mi cuenta</h3>
+                <p class="mt-2 max-w-2xl text-sm text-slate-300">La compleja configuración de campañas, la segmentación avanzada, la edición de cada video y el control diario del presupuesto <strong class="text-white">no se cobran en absoluto</strong>. Mi trabajo ya está cubierto y se ofrece a costo cero para el beneficio de Ela Bella.</p>
+              </div>
+              <div class="flex-shrink-0 text-center">
+                <div class="font-display text-5xl font-bold text-teal-glow">$0</div>
+                <div class="text-xs uppercase tracking-widest text-slate-400">mano de obra</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- COMPLEJIDAD OCULTA DE LA PAUTA -->
+        <div class="mt-12 reveal">
+          <div class="flex items-center gap-3 mb-6">
+            <span class="flex h-9 w-9 items-center justify-center rounded-xl bg-teal/15 text-teal-glow">🧠</span>
+            <h3 class="font-display text-2xl font-semibold text-white">La complejidad oculta de la pauta digital</h3>
+          </div>
+          <p class="max-w-3xl text-sm text-slate-400 mb-7">Configurar una campaña real no es "crear un anuncio y publicar". Exige alinear <strong class="text-slate-200">tres capas simultáneamente</strong>. Saltarse una sola convierte el presupuesto en humo. Esto es lo que separa al que quema dinero del que domina el mercado.</p>
+
+          <div class="grid md:grid-cols-3 gap-5">
+            <div class="complexity-card">
+              <div class="complexity-num">01</div>
+              <div class="text-2xl">🎯</div>
+              <h4>Segmentación avanzada</h4>
+              <p class="mt-1.5">No se apunta a "mujeres 18-50" (eso es quemar dinero). Se construyen <strong>audiencias por intereses, comportamientos y públicos similares</strong> derivados de tus compradores reales.</p>
+            </div>
+            <div class="complexity-card">
+              <div class="complexity-num">02</div>
+              <div class="text-2xl">🧩</div>
+              <h4>Alineación por producto</h4>
+              <p class="mt-1.5">El enfoque creativo cambia según el producto: <strong>no se vende igual un básico que un producto estrella</strong>. Cada item exige su propio ángulo y formato.</p>
+            </div>
+            <div class="complexity-card">
+              <div class="complexity-num">03</div>
+              <div class="text-2xl">🎬</div>
+              <h4>Optimización de contenido</h4>
+              <p class="mt-1.5">El tipo de formato y gancho se ajusta <strong>según el rendimiento real</strong> de cada anuncio. Lo que no convierte se rota en 3–5 días, sin piedad.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- EJEMPLO INTERACTIVO DE SEGMENTACIÓN -->
+        <div class="mt-14 reveal">
+          <div class="flex items-center gap-3 mb-3">
+            <span class="flex h-9 w-9 items-center justify-center rounded-xl bg-rose-500/15 text-rose-300">🎚️</div>
+            <h3 class="font-display text-2xl font-semibold text-white">Ejemplo real: cómo se segmenta según el público</h3>
+          </div>
+          <p class="max-w-3xl text-sm text-slate-400 mb-7">No existe "una audiencia". Cada producto y cada mercado se trabajan con segmentaciones distintas. Cambia el ejemplo y observa cómo cambia toda la estrategia. <span class="text-teal-glow">Esto es lo que hago manualmente, producto por producto.</span></p>
+
+          <div class="rounded-3xl border border-white/10 bg-ink-800/60 p-6 sm:p-8 backdrop-blur-xl">
+            <!-- Tabs de ejemplos -->
+            <div id="segTabs" class="flex flex-wrap gap-3 mb-7"></div>
+            <!-- Contenido del ejemplo -->
+            <div id="segContent" class="grid lg:grid-cols-2 gap-6"></div>
+          </div>
+        </div>
+
+        <!-- METODOLOGÍA DE INVESTIGACIÓN — HERRAMIENTAS (SECCIÓN PREMIUM) -->
+        <div class="mt-16 reveal">
+          <div class="text-center max-w-3xl mx-auto mb-10">
+            <div class="inline-flex items-center gap-2 rounded-full border border-indigo-400/30 bg-indigo-400/10 px-4 py-1.5 text-xs font-semibold text-indigo-300 mb-4">
+              <span class="relative flex h-2 w-2"><span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-indigo-400 opacity-75"></span><span class="relative inline-flex h-2 w-2 rounded-full bg-indigo-400"></span></span>
+              Inteligencia competitiva
+            </div>
+            <h3 class="font-display text-3xl font-bold text-white">Cómo investigo para crear algo <span class="gradient-text">mejor que la competencia</span></h3>
+            <p class="mt-4 text-slate-400">No improvisar ni copiar. <strong class="text-slate-200">Espío lo que funciona, detecto lo que falla y construyo una versión superior.</strong> Seis fuentes de inteligencia que trabajo de forma sistemática antes de tocar un solo peso de presupuesto.</p>
+          </div>
+
+          <div id="toolGrid" class="tool-grid">
+
+            <!-- Google Trends -->
+            <details class="tool-card" style="--tc:#f43f5e" open>
+              <summary class="tool-summary">
+                <div class="tool-glow"></div>
+                <div class="tool-icon-wrap"><span class="tool-icon-ring"></span><span class="tool-icon">📈</span></div>
+                <div class="tool-head">
+                  <span class="tool-badge">Demanda</span>
+                  <h4>Google Trends</h4>
+                  <p>Picos de interés y keywords exactas</p>
+                </div>
+                <span class="tool-chevron"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"/></svg></span>
+              </summary>
+              <div class="tool-body">
+                <p>Detecto los <strong class="text-slate-100">picos de demanda</strong> y las <strong class="text-slate-100">keywords exactas</strong> que el público paraguayo y brasileño busca en cada momento.</p>
+                <div class="tool-chips"><span class="tool-chip">Volumen de búsqueda</span><span class="tool-chip">Keywords en alza</span><span class="tool-chip">Estacionalidad</span></div>
+                <div class="tool-result"><span class="tool-result-icon">⚡</span><span class="text-teal-glow">Lanzo los anuncios cuando la curva de interés sube</span>, no cuando ya pasó.</div>
+                <div class="tool-example"><strong>Ejemplo:</strong> si "labios hidratados" entra en tendencia en PY, ese mismo día ya hay un Reel publicado con esa keyword.</div>
+              </div>
+            </details>
+
+            <!-- TikTok Trends -->
+            <details class="tool-card" style="--tc:#e879f9">
+              <summary class="tool-summary">
+                <div class="tool-glow"></div>
+                <div class="tool-icon-wrap"><span class="tool-icon-ring"></span><span class="tool-icon">🎵</span></div>
+                <div class="tool-head">
+                  <span class="tool-badge">Viralidad</span>
+                  <h4>TikTok Creative Center</h4>
+                  <p>Audios, hooks y estéticas ganadoras</p>
+                </div>
+                <span class="tool-chevron"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"/></svg></span>
+              </summary>
+              <div class="tool-body">
+                <p>Capturo los <strong class="text-slate-100">audios virales, ganchos (hooks) y estéticas</strong> que retienen al usuario en los primeros 3 segundos. Esa ventana decide si un anuncio triunfa o se ignora — y la domino.</p>
+                <div class="tool-chips"><span class="tool-chip">Audios en tendencia</span><span class="tool-chip">Hooks top</span><span class="tool-chip">Formatos virales</span></div>
+                <div class="tool-result"><span class="tool-result-icon">⚡</span><span class="text-teal-glow">Adapto cada tendencia al formato de Ela Bella</span> antes de que se sature.</div>
+                <div class="tool-example"><strong>Ejemplo:</strong> detecto el audio que está explotando en belleza y lo versiono para el producto antes de que termine la semana.</div>
+              </div>
+            </details>
+
+            <!-- Meta Ad Library -->
+            <details class="tool-card" style="--tc:#60a5fa">
+              <summary class="tool-summary">
+                <div class="tool-glow"></div>
+                <div class="tool-icon-wrap"><span class="tool-icon-ring"></span><span class="tool-icon">🔍</span></div>
+                <div class="tool-head">
+                  <span class="tool-badge">Espionaje</span>
+                  <h4>Biblioteca de Anuncios de Meta</h4>
+                  <p>Qué corre en tu competencia directa</p>
+                </div>
+                <span class="tool-chevron"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"/></svg></span>
+              </summary>
+              <div class="tool-body">
+                <p>Reviso qué anuncios corren tus <strong class="text-slate-100">competidores directos</strong>, cuánto tiempo llevan activos (señal de que funcionan) y qué ángulos usan.</p>
+                <div class="tool-chips"><span class="tool-chip">Anuncios activos</span><span class="tool-chip">Antigüedad delcreative</span><span class="tool-chip">Ángulos copy</span></div>
+                <div class="tool-result"><span class="tool-result-icon">⚡</span><span class="text-teal-glow">Modelo lo que funciona y evito los formatos que ya fracasaron</span> en tu nicho.</div>
+                <div class="tool-example"><strong>Ejemplo:</strong> si un competidor lleva 40 días con el mismo Reel, es señal de que convierte — y lo mejoramos.</div>
+              </div>
+            </details>
+
+            <!-- Analizadores de anuncios -->
+            <details class="tool-card" style="--tc:#34d399">
+              <summary class="tool-summary">
+                <div class="tool-glow"></div>
+                <div class="tool-icon-wrap"><span class="tool-icon-ring"></span><span class="tool-icon">📊</span></div>
+                <div class="tool-head">
+                  <span class="tool-badge">Datos</span>
+                  <h4>Analizadores de anuncios</h4>
+                  <p>Desglose de creatividades ganadoras</p>
+                </div>
+                <span class="tool-chevron"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"/></svg></span>
+              </summary>
+              <div class="tool-body">
+                <p>Cruzo datos de múltiples herramientas para ver <strong class="text-slate-100">qué hooks, duración y llamadas a la acción</strong> generan más engagement en el nicho belleza.</p>
+                <div class="tool-chips"><span class="tool-chip">CTR por hook</span><span class="tool-chip">Duración ideal</span><span class="tool-chip">CTA top</span></div>
+                <div class="tool-result"><span class="tool-result-icon">⚡</span><span class="text-teal-glow">Construyo algo mejorado a partir de lo probado</span>, no desde cero.</div>
+                <div class="tool-example"><strong>Ejemplo:</strong> si los Reels de 9 segundos rinden más que los de 15, ajusto la longitud de cada pieza.</div>
+              </div>
+            </details>
+
+            <!-- Control de CPA -->
+            <details class="tool-card" style="--tc:#2dd4bf">
+              <summary class="tool-summary">
+                <div class="tool-glow"></div>
+                <div class="tool-icon-wrap"><span class="tool-icon-ring"></span><span class="tool-icon">🎛️</span></div>
+                <div class="tool-head">
+                  <span class="tool-badge">Rentabilidad</span>
+                  <h4>Control de costo y alcance</h4>
+                  <p>Reach óptimo y CPA correcto por anuncio</p>
+                </div>
+                <span class="tool-chevron"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"/></svg></span>
+              </summary>
+              <div class="tool-body">
+                <p>Gestiono el <strong class="text-slate-100">alcance (reach) óptimo</strong> y calculo el <strong class="text-slate-100">costo correcto de adquisición (CPA)</strong> por cada anuncio.</p>
+                <div class="tool-chips"><span class="tool-chip">CPA objetivo</span><span class="tool-chip">Reach óptimo</span><span class="tool-chip">Pacing diario</span></div>
+                <div class="tool-result"><span class="tool-result-icon">⚡</span><span class="text-teal-glow">Si un anuncio supera el CPA objetivo, lo apago al instante</span>. Cero dinero quemado.</div>
+                <div class="tool-example"><strong>Ejemplo:</strong> cada compra cuesta lo que debe costar; nunca se apuesta a ciegas.</div>
+              </div>
+            </details>
+
+            <!-- Testeo A/B -->
+            <details class="tool-card" style="--tc:#fbbf24">
+              <summary class="tool-summary">
+                <div class="tool-glow"></div>
+                <div class="tool-icon-wrap"><span class="tool-icon-ring"></span><span class="tool-icon">🧪</span></div>
+                <div class="tool-head">
+                  <span class="tool-badge">Validación</span>
+                  <h4>Testeo A/B continuo</h4>
+                  <p>Datos, no intuición</p>
+                </div>
+                <span class="tool-chevron"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"/></svg></span>
+              </summary>
+              <div class="tool-body">
+                <p>Nunca se apuesta a una sola creatividad. Se prueban <strong class="text-slate-100">múltiples ganchos, ángulos y formatos en paralelo</strong>, se mide cuál convierte y se escala el ganador.</p>
+                <div class="tool-chips"><span class="tool-chip">Múltiples variantes</span><span class="tool-chip">Ganador escalado</span><span class="tool-chip">Perdedor descartado</span></div>
+                <div class="tool-result"><span class="tool-result-icon">⚡</span><span class="text-teal-glow">Cada peso invertido se justifica con datos</span>, no con corazonadas.</div>
+                <div class="tool-example"><strong>Ejemplo:</strong> 4 versiones de un mismo Reel corren a la vez; solo sobrevive la que más vende.</div>
+              </div>
+            </details>
+
+          </div>
+
+          <!-- Cinta de cierre de la sección -->
+          <div class="mt-8 rounded-2xl border border-indigo-400/20 bg-indigo-400/[0.06] px-6 py-5 text-center">
+            <p class="text-sm text-slate-300"><strong class="text-white">El resultado:</strong> no "creamos anuncios". <strong class="text-indigo-300">Ingeniería inversa del éxito</strong> de todo tu mercado, optimizada por IA y validada con datos. Esto es lo que ejecuto, a costo cero.</p>
+          </div>
+        </div>
+
+        <!-- Flujo de trabajo: investigación → ejecución -->
+        <div class="mt-14 reveal">
+          <div class="rounded-3xl border border-white/10 bg-ink-800/50 p-7 sm:p-9 backdrop-blur-xl">
+            <h3 class="text-center font-display text-xl font-semibold text-white">Del dato al anuncio ganador</h3>
+            <p class="mt-2 text-center text-sm text-slate-400 max-w-2xl mx-auto">Mi proceso cerrado: investigar, modelar lo que funciona, mejorarlo, publicar y optimizar. Repetir.</p>
+            <div class="mt-8 flex flex-col md:flex-row items-stretch gap-3">
+              <div class="research-step"><div class="research-icon">🔍</div><div class="research-title">Investigar</div><div class="research-desc">Trends, bibliotecas de anuncios, competencia</div></div>
+              <div class="research-arrow">→</div>
+              <div class="research-step"><div class="research-icon">🧬</div><div class="research-title">Modelar</div><div class="research-desc">Qué funciona y por qué</div></div>
+              <div class="research-arrow">→</div>
+              <div class="research-step"><div class="research-icon">⚡</div><div class="research-title">Mejorar</div><div class="research-desc">Versión superior con IA</div></div>
+              <div class="research-arrow">→</div>
+              <div class="research-step"><div class="research-icon">🚀</div><div class="research-title">Publicar</div><div class="research-desc">Segmentado y rotado</div></div>
+              <div class="research-arrow">→</div>
+              <div class="research-step"><div class="research-icon">📈</div><div class="research-title">Optimizar</div><div class="research-desc">Escalar lo que convierte</div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== CALCULADORA ===== -->
+    <section id="calculadora" class="py-20 sm:py-28">
+      <div class="mx-auto max-w-7xl px-5 sm:px-8">
+        <div class="section-head reveal">
+          <span class="section-tag">Presupuesto interactivo</span>
+          <h2 class="section-title">Diseña tu <span class="gradient-text">inversión mensual</span></h2>
+          <p class="section-sub">Mueve los controles y observa cómo el total se recalcula en tiempo real. Imprime o exporta tu configuración cuando quieras.</p>
+        </div>
+
+        <div class="mt-14 grid lg:grid-cols-5 gap-6">
+          <!-- Controles -->
+          <div class="lg:col-span-3 reveal">
+            <div class="rounded-3xl border border-white/10 bg-ink-800/60 p-6 sm:p-8 backdrop-blur-xl">
+              <h3 class="text-sm font-semibold uppercase tracking-widest text-slate-400">Componentes fijos</h3>
+              <div class="mt-4 space-y-3">
+                <div class="flex items-center justify-between rounded-2xl border border-white/5 bg-white/[0.03] px-5 py-4">
+                  <div>
+                    <div class="flex items-center gap-2 font-medium text-slate-100">Higgsfield <span class="badge">Plan Ultra</span></div>
+                    <div class="text-xs text-slate-500">Influencers sintéticos · contenido en ES (PY) y PT (BR) ilimitado</div>
+                  </div>
+                  <div class="font-display text-xl font-semibold text-white">$129.00<span class="text-xs font-normal text-slate-500">/mes</span></div>
+                </div>
+                <div class="flex items-center justify-between rounded-2xl border border-white/5 bg-white/[0.03] px-5 py-4">
+                  <div>
+                    <div class="flex items-center gap-2 font-medium text-slate-100">ElevenLabs <span class="badge">Plan Starter</span></div>
+                    <div class="text-xs text-slate-500">Doblaje de voz realista en español y portugués</div>
+                  </div>
+                  <div class="font-display text-xl font-semibold text-white">$6.00<span class="text-xs font-normal text-slate-500">/mes</span></div>
+                </div>
+              </div>
+
+              <h3 class="mt-8 text-sm font-semibold uppercase tracking-widest text-slate-400">Componentes dinámicos</h3>
+              <div class="mt-4 space-y-7">
+                <!-- Meta Ads slider -->
+                <div>
+                  <div class="flex items-center justify-between">
+                    <label for="metaSlider" class="flex items-center gap-2 font-medium text-slate-100">
+                      <span class="flex h-7 w-7 items-center justify-center rounded-lg bg-teal/15 text-teal-glow text-sm">M</span>
+                      Meta Ads (Reels) — presupuesto diario
+                    </label>
+                    <div class="font-display text-lg font-semibold text-white"><span id="metaValue">$5</span><span class="text-xs font-normal text-slate-500">/día</span></div>
+                  </div>
+                  <input id="metaSlider" type="range" min="0" max="30" step="1" value="5" class="calc-slider mt-3" />
+                  <div class="mt-1 flex justify-between text-[11px] text-slate-600"><span>$0</span><span>$30</span></div>
+                </div>
+
+                <!-- YouTube slider -->
+                <div>
+                  <div class="flex items-center justify-between">
+                    <label for="ytSlider" class="flex items-center gap-2 font-medium text-slate-100">
+                      <span class="flex h-7 w-7 items-center justify-center rounded-lg bg-rose-500/15 text-rose-300 text-sm">Y</span>
+                      YouTube Shorts — presupuesto diario
+                    </label>
+                    <div class="font-display text-lg font-semibold text-white"><span id="ytValue">$3</span><span class="text-xs font-normal text-slate-500">/día</span></div>
+                  </div>
+                  <input id="ytSlider" type="range" min="0" max="15" step="1" value="3" class="calc-slider mt-3" />
+                  <div class="mt-1 flex justify-between text-[11px] text-slate-600"><span>$0</span><span>$15</span></div>
+                </div>
+
+                <!-- TikTok toggle -->
+                <div class="rounded-2xl border border-white/5 bg-white/[0.03] p-5">
+                  <div class="flex items-start justify-between gap-4">
+                    <div>
+                      <div class="flex items-center gap-2 font-medium text-slate-100">
+                        <span class="flex h-7 w-7 items-center justify-center rounded-lg bg-fuchsia-500/15 text-fuchsia-300 text-sm">T</span>
+                        TikTok Ads
+                      </div>
+                      <p id="tiktokStatus" class="mt-1 text-xs text-slate-500">Pausado temporalmente para optimizar presupuesto en Fase 1.</p>
+                    </div>
+                    <button id="tiktokToggle" role="switch" aria-checked="false" class="toggle">
+                      <span class="toggle-knob"></span>
+                    </button>
+                  </div>
+                  <div id="tiktokAlert" class="mt-3 flex items-start gap-2 rounded-xl border border-amber-400/20 bg-amber-400/10 px-4 py-3 text-xs text-amber-200/90">
+                    <svg class="mt-0.5 h-4 w-4 shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M8.485 2.495c.673-1.167 2.357-1.167 3.03 0l6.28 10.875c.673 1.167-.17 2.625-1.515 2.625H3.72c-1.345 0-2.188-1.458-1.515-2.625L8.485 2.495zM10 6a.75.75 0 01.75.75v3.5a.75.75 0 01-1.5 0v-3.5A.75.75 0 0110 6zm0 9a1 1 0 100-2 1 1 0 000 2z" clip-rule="evenodd"/></svg>
+                    <span>TikTok exige un <strong>mínimo técnico de $20 USD/día</strong> (~$600/mes). Por eso lo mantenemos pausado en Fase 1 y usamos el tráfico de Meta y YouTube para empujar TikTok orgánico a costo cero.</span>
+                  </div>
+                  <div id="tiktokActiveInfo" class="mt-3 hidden items-center justify-between rounded-xl border border-teal/20 bg-teal/10 px-4 py-3 text-xs text-teal-glow">
+                    <span>TikTok Ads activo · mínimo técnico aplicado</span>
+                    <span class="font-semibold">$20/día · $600/mes</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Totalizador -->
+          <div class="lg:col-span-2 reveal" style="transition-delay:.1s">
+            <div class="sticky top-28 rounded-3xl border border-white/10 bg-gradient-to-br from-ink-700/80 to-ink-800/80 p-7 backdrop-blur-xl">
+              <div class="text-sm uppercase tracking-widest text-slate-400">Total mensual estimado</div>
+              <div class="mt-3 flex items-end gap-2">
+                <span id="totalDisplay" class="font-display text-5xl font-bold text-white tabular-nums">$0</span>
+                <span class="mb-1.5 text-sm text-slate-500">USD/mes</span>
+              </div>
+              <div class="mt-1 text-xs text-teal-glow">Actualizado en tiempo real</div>
+
+              <div class="my-6 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent"></div>
+
+              <ul id="breakdown" class="space-y-3 text-sm"></ul>
+
+              <div class="my-6 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent"></div>
+
+              <div class="flex items-center justify-between">
+                <div>
+                  <div class="text-xs text-slate-500">Gestión estratégica</div>
+                  <div class="font-semibold text-slate-100">Incluida</div>
+                </div>
+                <span class="rounded-lg bg-teal/15 px-3 py-1.5 text-sm font-semibold text-teal-glow">$0</span>
+              </div>
+
+              <button id="printBtn" class="mt-7 w-full inline-flex items-center justify-center gap-2 rounded-xl bg-teal px-5 py-3.5 text-sm font-semibold text-ink-900 shadow-lg shadow-teal/20 transition-all hover:bg-teal-glow hover:shadow-teal-glow/40 hover:-translate-y-0.5">
+                <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"/></svg>
+                Imprimir / exportar propuesta (PDF)
+              </button>
+              <p class="mt-3 text-center text-[11px] text-slate-600">Genera un PDF con tu configuración exacta.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== COMPARATIVA ===== -->
+    <section id="comparativa" class="py-20 sm:py-28">
+      <div class="mx-auto max-w-7xl px-5 sm:px-8">
+        <div class="section-head reveal">
+          <span class="section-tag">Comparativa financiera</span>
+          <h2 class="section-title">IA vs. <span class="gradient-text">Influencer humano</span></h2>
+          <p class="section-sub">La misma capacidad de producción, dos realidades de costo diametralmente opuestas. Cambia la vista y juzga tú mismo.</p>
+        </div>
+
+        <div class="mt-12 flex justify-center reveal">
+          <div class="inline-flex items-center rounded-full border border-white/10 bg-ink-800/70 p-1 backdrop-blur-xl">
+            <button id="cmpIa" class="cmp-btn cmp-active">Ver costo con IA</button>
+            <button id="cmpHumano" class="cmp-btn">Ver costo tradicional</button>
+          </div>
+        </div>
+
+        <div class="mt-12 grid md:grid-cols-2 gap-6">
+          <!-- Card 1 -->
+          <div class="cmp-card reveal" data-side="ia">
+            <div class="cmp-tag bg-teal/15 text-teal-glow">Influencer de IA</div>
+            <div class="cmp-platform">Higgsfield + ElevenLabs</div>
+            <div class="cmp-figure text-teal-glow">$135<span>/mes · ilimitado</span></div>
+            <ul class="cmp-list">
+              <li>Producción de videos <strong>ilimitada</strong></li>
+              <li>Doblaje perfecto al <strong>español (PY) y portugués (BR)</strong></li>
+              <li>Sin límites de derechos de imagen</li>
+              <li>Rotación diaria contra la fatiga</li>
+              <li>Cambios de guion en minutos</li>
+            </ul>
+          </div>
+          <!-- Card 2 -->
+          <div class="cmp-card reveal" style="transition-delay:.1s" data-side="humano">
+            <div class="cmp-tag bg-rose-500/15 text-rose-300">UGC / Influencer real</div>
+            <div class="cmp-platform">Creadores humanos</div>
+            <div class="cmp-figure text-rose-300">$300–$500<span>/video · limitado</span></div>
+            <ul class="cmp-list">
+              <li><strong>1 solo video</strong> por contrato</li>
+              <li>Coordinación de agenda y rodaje</li>
+              <li>Derechos de imagen limitados en el tiempo</li>
+              <li>Cambios lentos y costosos</li>
+              <li>Un solo idioma por contrato</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="mt-10 reveal">
+          <div class="mx-auto max-w-3xl rounded-3xl border border-teal/20 bg-teal/[0.06] p-7 text-center backdrop-blur-xl">
+            <p class="text-sm text-slate-300">Para producir el equivalente a <strong class="text-white">10 videos/mes</strong> con creadores humanos necesitarías entre <strong class="text-rose-300">$3.000 y $5.000 USD</strong>. Con IA: <strong class="text-teal-glow">$135 USD</strong>. Es un ahorro superior al <strong class="text-teal-glow">94%</strong>.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== EMBUDO ===== -->
+    <section id="embudo" class="py-20 sm:py-28">
+      <div class="mx-auto max-w-7xl px-5 sm:px-8">
+        <div class="section-head reveal">
+          <span class="section-tag">Tráfico y conversión</span>
+          <h2 class="section-title">El viaje del cliente, <span class="gradient-text">canal por canal</span></h2>
+          <p class="section-sub">Cada plataforma tiene un rol deliberado. Nada está ahí por moda — todo empuja hacia la venta.</p>
+        </div>
+
+        <div class="mt-14 grid lg:grid-cols-3 gap-6">
+          <!-- Foco conversión -->
+          <div class="lg:col-span-2 reveal">
+            <div class="h-full rounded-3xl border border-teal/20 bg-gradient-to-br from-teal/[0.08] to-transparent p-7 backdrop-blur-xl">
+              <div class="flex items-center gap-3">
+                <span class="rounded-lg bg-teal/15 px-3 py-1 text-xs font-bold uppercase tracking-wider text-teal-glow">Prioridad #1</span>
+                <h3 class="font-display text-xl font-semibold text-white">Conversión directa</h3>
+              </div>
+              <p class="mt-3 text-sm text-slate-300">El objetivo de los anuncios <strong class="text-white">no son los likes</strong>. Es acción. Meta Ads y YouTube Shorts están enfocados a dos resultados medibles:</p>
+              <div class="mt-6 grid sm:grid-cols-2 gap-4">
+                <div class="rounded-2xl border border-white/5 bg-white/[0.03] p-6">
+                  <div class="text-3xl">🛒</div>
+                  <h4 class="mt-3 font-semibold text-slate-100">Compra automática</h4>
+                  <p class="mt-1 text-sm text-slate-400">Tráfico dirigido a la <strong class="text-slate-200">tienda online de Ela Bella</strong> para compras sin fricción.</p>
+                </div>
+                <div class="rounded-2xl border border-white/5 bg-white/[0.03] p-6">
+                  <div class="text-3xl">💬</div>
+   <h4 class="mt-3 font-semibold text-slate-100">Mensaje privado</h4>
+                  <p class="mt-1 text-sm text-slate-400">Usuarios que escriben por <strong class="text-slate-200">DM / WhatsApp</strong> para resolver dudas y cerrar ventas personalizadas.</p>
+                </div>
+              </div>
+              <div class="mt-6 flex items-center gap-3 rounded-xl border border-white/5 bg-white/[0.02] px-4 py-3 text-xs text-slate-400">
+                <span class="text-rose-300">✕</span> Métricas de vanidad (likes, seguidores sin intención) <span class="text-slate-600">→</span> <span class="text-teal-glow">fuera del foco</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- TikTok colateral -->
+          <div class="reveal" style="transition-delay:.1s">
+            <div class="h-full rounded-3xl border border-white/10 bg-ink-800/60 p-7 backdrop-blur-xl flex flex-col">
+              <div class="flex items-center gap-2">
+                <span class="rounded-lg bg-fuchsia-500/15 px-3 py-1 text-xs font-bold uppercase tracking-wider text-fuchsia-300">Rol colateral</span>
+              </div>
+              <h3 class="mt-3 font-display text-xl font-semibold text-white">TikTok orgánico</h3>
+              <p class="mt-2 text-sm text-slate-400">Los <strong class="text-slate-200">anuncios pagados de TikTok están en pausa</strong> en Fase 1 (mínimo técnico de $20/día). En su lugar:</p>
+              <div class="mt-5 space-y-3 text-sm flex-1">
+                <div class="flex gap-3"><span class="font-display font-bold text-teal-glow">1.</span><span class="text-slate-300">El tráfico pagado de Meta y YouTube <strong class="text-slate-100">empuja nuestras cuentas orgánicas de TikTok</strong>.</span></div>
+                <div class="flex gap-3"><span class="font-display font-bold text-teal-glow">2.</span><span class="text-slate-300">TikTok crece como <strong class="text-slate-100">canal colateral a costo cero</strong>.</span></div>
+                <div class="flex gap-3"><span class="font-display font-bold text-teal-glow">3.</span><span class="text-slate-300">Se prepara el terreno para <strong class="text-slate-100">activar la pauta de pago más adelante</strong>.</span></div>
+              </div>
+              <div class="mt-6 rounded-xl border border-fuchsia-500/20 bg-fuchsia-500/10 px-4 py-3 text-xs text-fuchsia-200/90">
+                Resultado: crecimiento orgánico alimentado por la inversión de los otros canales.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ===== MAPA DE FLUJO REDESIGNADO ===== -->
+        <div class="mt-12 reveal">
+          <div class="rounded-3xl border border-white/10 bg-ink-800/40 p-7 sm:p-10 backdrop-blur-xl overflow-x-auto">
+            <div class="flex items-center justify-between flex-wrap gap-3 mb-2">
+              <h3 class="font-display text-xl font-semibold text-white">🗺️ Arquitectura del flujo de tráfico</h3>
+              <span class="text-xs text-slate-500">Producción → Distribución segmentada → Conversión</span>
+            </div>
+            <p class="text-sm text-slate-400 mb-8 max-w-3xl">Un sistema diseñado, no una publicación al azar. El contenido nace bilingüe en IA, se distribuye por canal con segmentación específica y converge en dos salidas de negocio, mientras TikTok crece orgánicamente de forma colateral.</p>
+
+            <!-- Diagrama de nodos -->
+            <div class="flow-diagram">
+              <!-- NIVEL 0: PRODUCCIÓN IA -->
+              <div class="flow-row">
+                <div class="flow-node flow-node-core">
+                  <div class="flow-node-icon">🤖</div>
+                  <div class="flow-node-title">Motor de Producción IA</div>
+                  <div class="flow-node-sub">Higgsfield Ultra + ElevenLabs Starter</div>
+                  <div class="flow-node-meta">
+                    <span class="flow-pill flow-pill-es">ES · Paraguay</span>
+                    <span class="flow-pill flow-pill-pt">PT · Brasil</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="flow-connector" data-label="Contenido segmentado por mercado e idioma"></div>
+
+              <!-- NIVEL 1: BIFURCACIÓN POR IDIOMA/MERCADO -->
+              <div class="flow-row flow-row-split">
+                <div class="flow-node flow-node-market">
+                  <div class="flow-node-icon">🌎</div>
+                  <div class="flow-node-title">Mercado Paraguay · Español</div>
+                  <div class="flow-node-sub">Ángulos y keywords locales</div>
+                </div>
+                <div class="flow-node flow-node-market">
+                  <div class="flow-node-icon">🌍</div>
+                  <div class="flow-node-title">Mercado Brasil · Português</div>
+                  <div class="flow-node-sub">Doblaje PT-BR natural</div>
+                </div>
+              </div>
+
+              <div class="flow-connector" data-label="Distribución pagada segmentada"></div>
+
+              <!-- NIVEL 2: CANALES PAGADOS -->
+              <div class="flow-row flow-row-triple">
+                <div class="flow-node flow-node-channel">
+                  <div class="flow-node-icon">📱</div>
+                  <div class="flow-node-title">Meta Reels Ads</div>
+                  <div class="flow-node-sub">Segmentación avanzada · conversión</div>
+                  <div class="flow-node-tag">PAID</div>
+                </div>
+                <div class="flow-node flow-node-channel">
+                  <div class="flow-node-icon">▶️</div>
+                  <div class="flow-node-title">YouTube Shorts Ads</div>
+                  <div class="flow-node-sub">Alcance + retargeting</div>
+                  <div class="flow-node-tag">PAID</div>
+                </div>
+                <div class="flow-node flow-node-channel flow-node-dim">
+                  <div class="flow-node-icon">🎵</div>
+                  <div class="flow-node-title">TikTok Ads</div>
+                  <div class="flow-node-sub">Pausado · Fase 1</div>
+                  <div class="flow-node-tag flow-node-tag-off">PAUSED</div>
+                </div>
+              </div>
+
+              <div class="flow-connector" data-label="Optimización diaria · rotación anti-fatiga 3–5 días"></div>
+
+              <!-- NIVEL 3: SALIDAS DE NEGOCIO -->
+              <div class="flow-row flow-row-triple">
+                <div class="flow-node flow-node-outcome flow-node-buy">
+                  <div class="flow-node-icon">🛒</div>
+                  <div class="flow-node-title">Compra en tienda online</div>
+                  <div class="flow-node-sub">Automática · sin fricción</div>
+                </div>
+                <div class="flow-node flow-node-outcome flow-node-msg">
+                  <div class="flow-node-icon">💬</div>
+                  <div class="flow-node-title">DM / WhatsApp</div>
+                  <div class="flow-node-sub">Cierre personalizado de ventas</div>
+                </div>
+                <div class="flow-node flow-node-outcome flow-node-organic">
+                  <div class="flow-node-icon">🌱</div>
+                  <div class="flow-node-title">TikTok orgánico</div>
+                  <div class="flow-node-sub">Crece de forma colateral · $0</div>
+                </div>
+              </div>
+
+              <div class="flow-connector" data-label="Datos → Investigación → mejora del motor IA"></div>
+
+              <!-- NIVEL 4: FEEDBACK LOOP -->
+              <div class="flow-row">
+                <div class="flow-node flow-node-feedback">
+                  <div class="flow-node-icon">🔄</div>
+                  <div class="flow-node-title">Loop de optimización</div>
+                  <div class="flow-node-sub">CPA, fatiga y ángulos medidos → el ganador se escala y alimenta al motor IA</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Leyenda -->
+            <div class="mt-8 flex flex-wrap items-center gap-x-6 gap-y-2 text-xs text-slate-400 border-t border-white/5 pt-5">
+              <span class="flex items-center gap-2"><span class="h-2.5 w-2.5 rounded-full bg-teal-glow"></span> Núcleo IA / pagado activo</span>
+              <span class="flex items-center gap-2"><span class="h-2.5 w-2.5 rounded-full bg-emerald-400"></span> Conversión / compra</span>
+              <span class="flex items-center gap-2"><span class="h-2.5 w-2.5 rounded-full bg-fuchsia-400"></span> Canal colateral</span>
+              <span class="flex items-center gap-2"><span class="h-2.5 w-2.5 rounded-full bg-slate-600"></span> Pausado / optimización</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== SIMULADOR FAST AD ===== -->
+    <section id="simulador" class="py-20 sm:py-28">
+      <div class="mx-auto max-w-7xl px-5 sm:px-8">
+        <div class="section-head reveal">
+          <span class="section-tag">Testeo rápido · Fast Ad Iteration</span>
+          <h2 class="section-title">Simulador del <span class="gradient-text">ciclo de testeo</span></h2>
+          <p class="section-sub">¿Cuánto dejar correr un anuncio antes de rotarlo? Mueve el control y descubre cómo tu estrategia evita la fatiga publicitaria.</p>
+        </div>
+
+        <div class="mt-14 grid lg:grid-cols-5 gap-6 items-start">
+          <!-- Slider -->
+          <div class="lg:col-span-2 reveal">
+            <div class="rounded-3xl border border-white/10 bg-ink-800/60 p-7 backdrop-blur-xl">
+              <label for="daysSlider" class="text-sm font-medium text-slate-100">Días que corre cada anuncio</label>
+              <div class="mt-3 flex items-end gap-2">
+                <span id="daysValue" class="font-display text-5xl font-bold text-teal-glow tabular-nums">3</span>
+                <span class="mb-1.5 text-sm text-slate-500">días</span>
+  </div>
+              <input id="daysSlider" type="range" min="1" max="10" step="1" value="3" class="calc-slider mt-4" />
+              <div class="mt-1 flex justify-between text-[11px] text-slate-600"><span>1 día</span><span>10 días</span></div>
+
+              <div id="fatigueMeter" class="mt-7">
+                <div class="flex items-center justify-between text-xs"><span class="text-slate-400">Nivel de fatiga del anuncio</span><span id="fatigueLabel" class="font-semibold text-teal-glow">Óptimo</span></div>
+                <div class="mt-2 h-2.5 w-full overflow-hidden rounded-full bg-white/5">
+                  <div id="fatigueBar" class="h-full rounded-full bg-gradient-to-r from-teal to-teal-glow transition-all duration-300" style="width:30%"></div>
+                </div>
+              </div>
+
+              <div id="daysVerdict" class="mt-6 rounded-2xl border border-teal/20 bg-teal/[0.06] p-4 text-sm text-slate-300">
+                Mantener el anuncio <strong class="text-white">3 días</strong> está en el rango ideal: aprovechas el pico de rendimiento sin que el público lo memorice.
+              </div>
+            </div>
+          </div>
+
+          <!-- Explicación -->
+          <div class="lg:col-span-3 reveal" style="transition-delay:.1s">
+            <div class="space-y-4">
+              <div class="rounded-3xl border border-white/10 bg-ink-800/60 p-7 backdrop-blur-xl">
+                <h3 class="font-display text-xl font-semibold text-white">¿Qué es la "fatiga del anuncio"?</h3>
+                <p class="mt-3 text-sm text-slate-400 leading-relaxed">
+                  Cuando un mismo anuncio se muestra repetidamente al mismo público, el cerebro lo <strong class="text-slate-200">memoriza y deja de prestarle atención</strong>. El resultado: el costo por clic sube, el alcance cae y se quema presupuesto sin retorno.
+                </p>
+                <div class="mt-5 grid sm:grid-cols-3 gap-3 text-center">
+                  <div class="rounded-2xl border border-teal/20 bg-teal/[0.06] p-4"><div class="text-xs text-slate-400">Rango ideal</div><div class="mt-1 font-display text-lg font-bold text-teal-glow">3–5 días</div></div>
+                  <div class="rounded-2xl border border-amber-400/20 bg-amber-400/10 p-4"><div class="text-xs text-slate-400">Zona de alerta</div><div class="mt-1 font-display text-lg font-bold text-amber-300">6–7 días</div></div>
+                  <div class="rounded-2xl border border-rose-500/20 bg-rose-500/10 p-4"><div class="text-xs text-slate-400">Desperdicio</div><div class="mt-1 font-display text-lg font-bold text-rose-300">8+ días</div></div>
+                </div>
+              </div>
+
+              <div class="rounded-3xl border border-white/10 bg-ink-800/60 p-7 backdrop-blur-xl">
+                <h3 class="font-display text-xl font-semibold text-white">Mi estrategia contra la fatiga</h3>
+                <p class="mt-3 text-sm text-slate-400">Como la IA permite crear anuncios <strong class="text-slate-200">en un solo día</strong>, el ciclo es:</p>
+                <ol class="mt-4 space-y-3 text-sm">
+                  <li class="flex gap-3"><span class="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-teal/15 text-xs font-bold text-teal-glow">1</span><span class="text-slate-300"><strong class="text-slate-100">Crear</strong> un anuncio nuevo en el día.</span></li>
+                  <li class="flex gap-3"><span class="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-teal/15 text-xs font-bold text-teal-glow">2</span><span class="text-slate-300"><strong class="text-slate-100">Publicar</strong> y dejar correr entre 3 y 5 días.</span></li>
+                  <li class="flex gap-3"><span class="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-teal/15 text-xs font-bold text-teal-glow">3</span><span class="text-slate-300"><strong class="text-slate-100">Rotar</strong>: retirar antes de la fatiga y reemplazar.</span></li>
+                </ol>
+                <p class="mt-4 text-sm text-teal-glow">Resultado: rendimiento máximo sostenido y cero dinero quemado en anuncios memorizados.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== HOOKS ===== -->
+    <section id="hooks" class="py-20 sm:py-28">
+      <div class="mx-auto max-w-7xl px-5 sm:px-8">
+        <div class="section-head reveal">
+          <span class="section-tag">Matriz de ganchos creativos</span>
+          <h2 class="section-title">Ángulos de venta, <span class="gradient-text">al instante</span></h2>
+          <p class="section-sub">Elige un enfoque y mira el gancho de 3 segundos y el guion rápido que generamos con Higgsfield + ElevenLabs.</p>
+        </div>
+
+        <div class="mt-12 reveal">
+          <div id="hookTabs" class="flex flex-wrap justify-center gap-3"></div>
+        </div>
+
+        <div class="mt-10 reveal">
+          <div class="rounded-3xl border border-white/10 bg-ink-800/60 p-7 backdrop-blur-xl">
+            <div id="hookContent" class="grid md:grid-cols-2 gap-6">
+              <!-- inyectado por JS -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== FAQ ===== -->
+    <section id="faq" class="py-20 sm:py-28">
+      <div class="mx-auto max-w-4xl px-5 sm:px-8">
+        <div class="section-head reveal">
+          <span class="section-tag">Preguntas frecuentes</span>
+          <h2 class="section-title">Las dudas de la junta, <span class="gradient-text">resueltas</span></h2>
+          <p class="section-sub">Sin tecnicismos. Respuestas claras a las objeciones más habituales.</p>
+        </div>
+
+        <div id="faqList" class="mt-12 space-y-3 reveal">
+          <!-- inyectado por JS -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== LUZ VERDE / CTA ===== -->
+    <section id="luz-verde" class="py-24 sm:py-32">
+      <div class="mx-auto max-w-4xl px-5 sm:px-8 text-center">
+        <div class="reveal">
+          <span class="inline-flex items-center gap-2 rounded-full border border-teal/30 bg-teal/10 px-4 py-1.5 text-xs font-medium text-teal-glow">Decisión final</span>
+          <h2 class="mt-6 font-display text-4xl sm:text-5xl font-bold text-white leading-tight">¿Damos <span class="gradient-text">luz verde</span> al proyecto?</h2>
+          <p class="mt-5 text-lg text-slate-400">Una inversión mínima y controlada. Un mercado internacional por validar. Una gestión estratégica a costo cero. La próxima campaña de Ela Bella puede empezar hoy.</p>
+
+          <div class="mt-12 flex flex-col items-center gap-4">
+            <button id="greenLightBtn" class="group relative inline-flex items-center justify-center gap-3 rounded-2xl bg-gradient-to-r from-teal to-teal-glow px-12 py-6 text-lg font-bold text-ink-900 shadow-2xl shadow-teal/30 transition-all hover:scale-[1.03] hover:shadow-teal-glow/50">
+              <span class="absolute inset-0 rounded-2xl bg-white/20 opacity-0 blur-md transition-opacity group-hover:opacity-100"></span>
+              <svg class="relative h-6 w-6" fill="currentColor" viewBox="0 0 20 20"><path d="M3 4a2 2 0 00-2 2v1.161l8.441 4.221a1.25 1.25 0 001.118 0L19 7.162V6a2 2 0 00-2-2H3z"/><path d="M19 8.839l-7.77 3.885a2.75 2.75 0 01-1.46.386V19a1 1 0 001.555.832l8-5.336A1 1 0 0020 13.66V10a2 2 0 00-1-1.161z"/></svg>
+              <span class="relative">Dar Luz Verde al Proyecto</span>
+            </button>
+            <p class="text-xs text-slate-500">Sin compromiso financiero · inicio de configuración técnica</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===== Footer ===== -->
+  <footer class="border-t border-white/10 bg-ink-900/80">
+    <div class="mx-auto max-w-7xl px-5 sm:px-8 py-12">
+      <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+        <div class="flex items-center gap-3">
+          <span class="logo-chip"><img src="assets/glow.png" alt="Ela Bella" class="h-full w-full object-contain" /></span>
+          <div>
+            <div class="font-display font-semibold text-slate-100">Ela Bella</div>
+            <div class="text-xs text-slate-500">Propuesta de Marketing Digital con IA · 2026</div>
+          </div>
+        </div>
+        <div class="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm text-slate-400">
+          <a href="#tldr" class="hover:text-teal-glow transition-colors">Resumen</a>
+          <a href="#cerebro" class="hover:text-teal-glow transition-colors">Estrategia</a>
+          <a href="#calculadora" class="hover:text-teal-glow transition-colors">Presupuesto</a>
+          <a href="#faq" class="hover:text-teal-glow transition-colors">FAQ</a>
+        </div>
+      </div>
+      <div class="mt-8 border-t border-white/5 pt-6 text-center text-xs text-slate-600">
+        Documento confidencial preparado para la dirección de Ela Bella · Higgsfield + ElevenLabs + Meta + YouTube + TikTok
+      </div>
+    </div>
+  </footer>
+
+  <!-- ===== Modal de compromiso ===== -->
+  <div id="commitModal" class="fixed inset-0 z-[60] hidden items-center justify-center p-4">
+    <div class="modal-backdrop absolute inset-0 bg-ink-900/80 backdrop-blur-sm"></div>
+    <div class="relative w-full max-w-md rounded-3xl border border-teal/30 bg-ink-800 p-8 shadow-2xl modal-inner">
+      <div class="flex justify-center">
+        <div class="flex h-16 w-16 items-center justify-center rounded-2xl bg-teal/15 animate-pulse-glow">
+          <svg class="h-8 w-8 text-teal-glow" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
+        </div>
+      </div>
+      <h3 class="mt-5 text-center font-display text-2xl font-bold text-white">¡Excelente decisión!</h3>
+      <p class="mt-3 text-center text-sm text-slate-300">Iniciando configuración técnica del entorno de producción IA bilingüe y distribución para Ela Bella. Te contactaremos para el kickoff.</p>
+      <div class="mt-6 space-y-2 text-sm">
+        <div class="flex items-center gap-3 rounded-xl bg-white/[0.03] px-4 py-3"><span class="text-teal-glow">✓</span><span class="text-slate-300">Entornos Higgsfield + ElevenLabs (ES + PT)</span></div>
+        <div class="flex items-center gap-3 rounded-xl bg-white/[0.03] px-4 py-3"><span class="text-teal-glow">✓</span><span class="text-slate-300">Configuración de cuentas publicitarias</span></div>
+        <div class="flex items-center gap-3 rounded-xl bg-white/[0.03] px-4 py-3"><span class="text-teal-glow">✓</span><span class="text-slate-300">Investigación de tendencias inicial</span></div>
+      </div>
+      <button id="closeModal" class="mt-6 w-full rounded-xl border border-white/15 bg-white/5 px-5 py-3 text-sm font-semibold text-slate-200 transition hover:bg-white/10">Entendido</button>
+    </div>
+  </div>
+
+  <!-- ===== Scripts ===== -->
+  <script src="js/app.js"></script>
+  <script src="js/calculator.js"></script>
+  <script src="js/comparison.js"></script>
+  <script src="js/simulator.js"></script>
+  <script src="js/segmentation.js"></script>
+  <script src="js/hooks.js"></script>
+  <script src="js/faq.js"></script>
+  <script src="js/confetti.js"></script>
+  <script src="js/spotlight.js"></script>
+</body>
+</html>
