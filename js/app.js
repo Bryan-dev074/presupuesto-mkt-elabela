@@ -29,7 +29,7 @@
     })
   );
 
-  /* ---------- Reveal on scroll (IntersectionObserver) ---------- */
+  /* ---------- Reveal al hacer scroll (IntersectionObserver) ---------- */
   const revealEls = document.querySelectorAll(".reveal");
   if ("IntersectionObserver" in window) {
     const io = new IntersectionObserver(
@@ -47,15 +47,4 @@
   } else {
     revealEls.forEach((el) => el.classList.add("is-visible"));
   }
-
-  /* ---------- Cerrar modal con tecla Escape ---------- */
-  document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape") {
-      const modal = document.getElementById("commitModal");
-      if (modal?.classList.contains("show")) {
-        modal.classList.remove("show", "flex");
-        document.body.style.overflow = "";
-      }
-    }
-  });
 })();

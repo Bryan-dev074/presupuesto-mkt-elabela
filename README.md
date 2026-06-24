@@ -1,6 +1,6 @@
-# Propuesta de Marketing Digital · Ela Bella
+# Propuesta de Marketing Digital · Ela Bela
 
-Aplicación web interactiva, ultra moderna y persuasiva para presentar a la dirección de **Ela Bella** una propuesta de campaña de validación internacional con **Influencers de IA** (Higgsfield + ElevenLabs), producción bilingüe **español (Paraguay) + portugués (Brasil)**, distribución en Meta / YouTube / TikTok y gestión estratégica incluida a costo cero.
+Aplicación web interactiva, ultra moderna y persuasiva para presentar a la dirección de **Ela Bela** una propuesta de campaña de validación internacional con **Influencers de IA** (Higgsfield + ElevenLabs), producción bilingüe **español (Paraguay) + portugués (Brasil)**, distribución en Meta / YouTube / TikTok y gestión estratégica incluida a costo cero.
 
 > Stack: HTML + **Tailwind CSS (compilado a un CSS estático)** + JavaScript modular (vanilla). Sitio 100% estático, sin dependencias externas en tiempo de ejecución. Despliegue directo en GitHub Pages servido desde la rama `main`.
 
@@ -8,7 +8,7 @@ Aplicación web interactiva, ultra moderna y persuasiva para presentar a la dire
 
 ## ✨ Características
 
-- **Navbar + Footer** con logo de Ela Bella (`assets/glow.png`), scroll suave, menú móvil y **resaltado del enlace activo** (scrollspy).
+- **Navbar + Footer** con logo de Ela Bela (`assets/glow.png`), scroll suave, menú móvil y **resaltado del enlace activo** (scrollspy).
 - **Barra de progreso de scroll** y **botón "volver arriba"** flotante.
 - **Resumen ejecutivo (TL;DR)** interactivo: Qué · Por qué · Para qué en 30 segundos.
 - **El cerebro de la campaña (sección estrella)**: la complejidad oculta de la pauta digital, mano de obra a $0, **ejemplo interactivo de segmentación por público/idioma** (4 casos reales PY/BR) y metodología de investigación (Google Trends, TikTok Creative Center, Biblioteca de Anuncios de Meta, analizadores de anuncios, control de CPA, testeo A/B).
@@ -47,12 +47,12 @@ presupuesto-mkt-elabela/
 │   ├── confetti.js         # Efecto festivo + modal "Dar Luz Verde"
 │   └── spotlight.js        # Glow que sigue el cursor en las tarjetas de herramientas
 ├── assets/
-│   ├── glow.png            # Logo real de Ela Bella (usado en Navbar/Footer/favicon)
+│   ├── glow.png            # Logo real de Ela Bela (usado en Navbar/Footer/favicon)
 │   └── logo-elabela.svg    # Logo placeholder (no referenciado, reemplazado por glow.png)
 └── README.md
 ```
 
-### 🔁 Reemplazar el logo real de Ela Bella
+### 🔁 Reemplazar el logo real de Ela Bela
 
 El proyecto ya usa el logo real de la tienda en `assets/glow.png` (integrado como "sello de marca" en un chip claro sobre el fondo oscuro, en Navbar, Footer y favicon). Para cambiarlo por otro archivo:
 
@@ -123,4 +123,4 @@ Cada `push` a `main` se publica solo en 1–2 minutos.
 
 ---
 
-**Confidencial · Preparado para la dirección de Ela Bella · 2026**
+**Confidencial · Preparado para la dirección de Ela Bela · 2026**

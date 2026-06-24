@@ -11,7 +11,7 @@
       label: "Dolor del cliente",
       hook: '“Pare de tirar dinero en productos que no te dan resultado…”',
       script:
-        'Identificamos el problema frustrante que sufre el cliente y abrimos mostrando ese dolor de forma reconocible. Luego presentamos el producto de Ela Bella como la solución directa, con prueba visual y CTA de compra o mensaje privado. Cierre con la promesa de resultado en primera persona.',
+        'Identificamos el problema frustrante que sufre el cliente y abrimos mostrando ese dolor de forma reconocible. Luego presentamos el producto de Ela Bela como la solución directa, con prueba visual y CTA de compra o mensaje privado. Cierre con la promesa de resultado en primera persona.',
     },
     {
       id: "demo",
@@ -51,7 +51,7 @@
       label: "Curiosidad / truco",
       hook: '“El truco que nadie te cuenta sobre…”',
       script:
-        'Abrimos con un misterio o dato contraintuitivo que detiene el scroll. Mantenemos la tensión 3-5 segundos antes de revelar que la respuesta es el producto de Ela Bella. Voz en off intrigante. CTA que invita a descubrir más escribiendo por DM.',
+        'Abrimos con un misterio o dato contraintuitivo que detiene el scroll. Mantenemos la tensión 3-5 segundos antes de revelar que la respuesta es el producto de Ela Bela. Voz en off intrigante. CTA que invita a descubrir más escribiendo por DM.',
     },
   ];
 

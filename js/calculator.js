@@ -156,7 +156,7 @@
     }
     box.innerHTML = `
       <div style="display:block !important; padding:24px; margin-bottom:16px; border:2px solid #0d9488; border-radius:12px; background:#f0fdfa;">
-        <h2 style="margin:0 0 8px; color:#0f172a; font-size:20px;">Propuesta de presupuesto personalizada — Ela Bella</h2>
+        <h2 style="margin:0 0 8px; color:#0f172a; font-size:20px;">Propuesta de presupuesto personalizada — Ela Bela</h2>
         <p style="margin:0 0 12px; color:#475569; font-size:13px;">Generada el ${new Date().toLocaleDateString("es-ES", { dateStyle: "long" })}</p>
         <table style="width:100%; border-collapse:collapse; font-size:13px; color:#1e293b;">
           <tr><td style="padding:6px 0; border-bottom:1px solid #cbd5e1;">Higgsfield (Plan Ultra)</td><td style="text-align:right; border-bottom:1px solid #cbd5e1; font-weight:600;">${money2(COSTS.higgsfield.monthly)}</td></tr>

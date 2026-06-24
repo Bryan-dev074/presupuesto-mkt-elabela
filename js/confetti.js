@@ -1,13 +1,12 @@
 /* =====================================================================
-   confetti.js · Efecto festivo + modal de compromiso en "Dar Luz Verde"
+   confetti.js · Efecto festivo al tocar "Dar Luz Verde"
+   (el botón abre WhatsApp; el confeti es la celebración)
    ===================================================================== */
 (function () {
   "use strict";
 
   const btn = document.getElementById("greenLightBtn");
-  const modal = document.getElementById("commitModal");
-  const closeModal = document.getElementById("closeModal");
-  if (!btn || !modal) return;
+  if (!btn) return;
 
   const COLORS = ["#2dd4bf", "#14b8a6", "#5eead4", "#a78bfa", "#f0abfc", "#fbbf24", "#f8fafc"];
 
@@ -58,18 +57,6 @@
     }
   }
 
-  /* ---------- Abrir modal ---------- */
-  function openModal() {
-    modal.classList.add("show", "flex");
-    document.body.style.overflow = "hidden";
-    launchConfetti();
-  }
-  function hideModal() {
-    modal.classList.remove("show", "flex");
-    document.body.style.overflow = "";
-  }
-
-  btn.addEventListener("click", openModal);
-  closeModal?.addEventListener("click", hideModal);
-  modal.querySelector(".modal-backdrop")?.addEventListener("click", hideModal);
+  /* ---------- Celebración al tocar (el enlace abre WhatsApp) ---------- */
+  btn.addEventListener("click", launchConfetti);
 })();
