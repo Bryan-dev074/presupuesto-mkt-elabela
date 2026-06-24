@@ -9,53 +9,8 @@
   <!-- Favicon (logo real) -->
   <link rel="icon" type="image/png" href="assets/glow.png" />
 
-  <!-- Tailwind CSS (CDN optimizado) -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            ink: {
-              900: '#0a0f1a',
-              800: '#0f1623',
-              700: '#161e2e',
-              600: '#1e2839',
-              500: '#2a364c',
-            },
-            teal: {
-              glow: '#2dd4bf',
-              DEFAULT: '#14b8a6',
-              deep: '#0d9488',
-            },
-          },
-          fontFamily: {
-            sans: ['Inter', 'system-ui', 'sans-serif'],
-            display: ['"Space Grotesk"', 'Inter', 'sans-serif'],
-          },
-          animation: {
-            'float': 'float 6s ease-in-out infinite',
-            'pulse-glow': 'pulseGlow 3s ease-in-out infinite',
-            'shimmer': 'shimmer 2.5s linear infinite',
-          },
-          keyframes: {
-            float: {
-              '0%,100%': { transform: 'translateY(0px)' },
-              '50%': { transform: 'translateY(-12px)' },
-            },
-            pulseGlow: {
-              '0%,100%': { boxShadow: '0 0 20px rgba(45,212,191,0.3)' },
-              '50%': { boxShadow: '0 0 40px rgba(45,212,191,0.6)' },
-            },
-            shimmer: {
-              '0%': { backgroundPosition: '-200% 0' },
-              '100%': { backgroundPosition: '200% 0' },
-            },
-          },
-        },
-      },
-    };
-  </script>
+  <!-- Tailwind CSS (compilado estático — sin dependencia de CDN, carga instantánea) -->
+  <link rel="stylesheet" href="css/tailwind.css" />
 
   <!-- Fuentes -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -64,14 +19,24 @@
 
   <!-- Estilos propios -->
   <link rel="stylesheet" href="css/styles.css" />
+
+  <!-- Fallback: si JS está desactivado, mostrar todo el contenido -->
+  <noscript>
+    <style>
+      .reveal { opacity: 1 !important; transform: none !important; filter: none !important; }
+    </style>
+  </noscript>
 </head>
 <body class="bg-ink-900 text-slate-200 font-sans antialiased selection:bg-teal-glow/30 selection:text-white">
 
+  <!-- ===== Barra de progreso de scroll ===== -->
+  <div id="scrollProgress" aria-hidden="true"></div>
+
   <!-- ===== Fondo decorativo ===== -->
   <div class="fixed inset-0 -z-10 overflow-hidden pointer-events-none" aria-hidden="true">
-    <div class="absolute -top-40 -left-40 h-[500px] w-[500px] rounded-full bg-teal/10 blur-[120px]"></div>
-    <div class="absolute top-1/3 -right-40 h-[500px] w-[500px] rounded-full bg-teal-deep/10 blur-[120px]"></div>
-    <div class="absolute bottom-0 left-1/3 h-[400px] w-[400px] rounded-full bg-indigo-500/5 blur-[100px]"></div>
+    <div class="orb orb-a absolute -top-40 -left-40 h-[500px] w-[500px] rounded-full bg-teal/10 blur-[120px]"></div>
+    <div class="orb orb-b absolute top-1/3 -right-40 h-[500px] w-[500px] rounded-full bg-teal-deep/10 blur-[120px]"></div>
+    <div class="orb orb-c absolute bottom-0 left-1/3 h-[400px] w-[400px] rounded-full bg-indigo-500/5 blur-[100px]"></div>
     <div class="grid-bg absolute inset-0 opacity-[0.025]"></div>
   </div>
 
@@ -278,7 +243,7 @@
         <!-- EJEMPLO INTERACTIVO DE SEGMENTACIÓN -->
         <div class="mt-14 reveal">
           <div class="flex items-center gap-3 mb-3">
-            <span class="flex h-9 w-9 items-center justify-center rounded-xl bg-rose-500/15 text-rose-300">🎚️</div>
+            <span class="flex h-9 w-9 items-center justify-center rounded-xl bg-rose-500/15 text-rose-300">🎚️</span>
             <h3 class="font-display text-2xl font-semibold text-white">Ejemplo real: cómo se segmenta según el público</h3>
           </div>
           <p class="max-w-3xl text-sm text-slate-400 mb-7">No existe "una audiencia". Cada producto y cada mercado se trabajan con segmentaciones distintas. Cambia el ejemplo y observa cómo cambia toda la estrategia. <span class="text-teal-glow">Esto es lo que hago manualmente, producto por producto.</span></p>
@@ -358,7 +323,7 @@
               </summary>
               <div class="tool-body">
                 <p>Reviso qué anuncios corren tus <strong class="text-slate-100">competidores directos</strong>, cuánto tiempo llevan activos (señal de que funcionan) y qué ángulos usan.</p>
-                <div class="tool-chips"><span class="tool-chip">Anuncios activos</span><span class="tool-chip">Antigüedad delcreative</span><span class="tool-chip">Ángulos copy</span></div>
+                <div class="tool-chips"><span class="tool-chip">Anuncios activos</span><span class="tool-chip">Antigüedad del creativo</span><span class="tool-chip">Ángulos de copy</span></div>
                 <div class="tool-result"><span class="tool-result-icon">⚡</span><span class="text-teal-glow">Modelo lo que funciona y evito los formatos que ya fracasaron</span> en tu nicho.</div>
                 <div class="tool-example"><strong>Ejemplo:</strong> si un competidor lleva 40 días con el mismo Reel, es señal de que convierte — y lo mejoramos.</div>
               </div>
@@ -960,6 +925,11 @@
     </div>
   </div>
 
+  <!-- ===== Botón volver arriba ===== -->
+  <button id="backToTop" aria-label="Volver arriba" class="back-to-top">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M5 15l7-7 7 7"/></svg>
+  </button>
+
   <!-- ===== Scripts ===== -->
   <script src="js/app.js"></script>
   <script src="js/calculator.js"></script>
@@ -970,5 +940,6 @@
   <script src="js/faq.js"></script>
   <script src="js/confetti.js"></script>
   <script src="js/spotlight.js"></script>
+  <script src="js/enhance.js"></script>
 </body>
 </html>

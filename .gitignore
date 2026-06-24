@@ -20,3 +20,6 @@ desktop.ini
 .idea/
 *.swp
 *.swo
+
+# Herramientas locales (preview de Claude Code)
+.claude/
